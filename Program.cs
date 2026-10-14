@@ -6,6 +6,7 @@
         {
             Console.WriteLine("tjabba tjena hallå!");
             Console.WriteLine("tjabba tjena hallå igen");
+            Console.WriteLine("Hejj");
         }
     }
 }
