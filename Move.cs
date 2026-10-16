@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TjuvOchPolis
+namespace TestTjuvOchPolis
 {
-    internal class Person
+    internal class Move
     {
+     
     }
 }
