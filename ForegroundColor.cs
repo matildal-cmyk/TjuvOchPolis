@@ -1,4 +1,4 @@
-﻿namespace TestTjuvOchPolis
+﻿namespace TjuvOchPolis
 {
     internal class ForegroundColor
     {

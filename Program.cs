@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace TestTjuvOchPolis
+namespace TjuvOchPolis
 {
     internal class Program
     {
@@ -9,6 +9,7 @@ namespace TestTjuvOchPolis
             Random rand = new Random();
 
             Random Slump = new Random();
+
             List<Personer> list = new List<Personer>();
             Tjuv tjuv = new Tjuv("Lasse", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, "pengar");
             Polis polis = new Polis("Kling", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.DarkCyan, "smycken");
@@ -16,6 +17,9 @@ namespace TestTjuvOchPolis
             list.Add(tjuv);
             list.Add(polis);
             list.Add(medborgare);
+
+
+
 
             while (true)
             {

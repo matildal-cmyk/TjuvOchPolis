@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TestTjuvOchPolis
+namespace TjuvOchPolis
 {
     internal class Move
     {
