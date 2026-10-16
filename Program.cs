@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace TestTjuvOchPolis
+namespace TjuvOchPolis
 {
     internal class Program
     {
