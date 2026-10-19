@@ -9,26 +9,57 @@ class Program
 
 
 
-        List<Personer> list = new List<Personer>();
-        Tjuv tjuv = new Tjuv("Lasse", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, "pengar");
-        Polis polis = new Polis("Kling", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.DarkCyan, "smycken");
-        Medborgare medborgare = new Medborgare("Fru Larsson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.DarkYellow, "halsband");
-        list.Add(tjuv);
-        list.Add(polis);
-        list.Add(medborgare);
+        //List<Personer> list = new List<Personer>();
+
+        //Polis polis = new Polis("Kling", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.DarkCyan, "smycken");
+        //Medborgare medborgare = new Medborgare("Fru Larsson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.DarkYellow, "halsband");
+
+        //list.Add(polis);
+        //list.Add(medborgare);
+        //list.Add(new Tjuv("Karlsson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
+        //list.Add(new Tjuv("Lasse", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
+        //list.Add(new Tjuv("Bengt", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
+        //list.Add(new Tjuv("Kalle", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
+
+
+
+        List<Personer> stad = new List<Personer>();
+
+
+        Tjuv tjuv1 = new Tjuv("T", "Karlsson", Random.Shared.Next(1, 98), Random.Shared.Next(1, 98), ConsoleColor.Red, "");
+        Tjuv tjuv2 = new Tjuv("T", "Larsson", Random.Shared.Next(1, 98), Random.Shared.Next(1, 98), ConsoleColor.Red, "");
+        Tjuv tjuv3 = new Tjuv("T", "Svansson", Random.Shared.Next(1, 98), Random.Shared.Next(1, 98), ConsoleColor.Red, "");
+
+
+
+        stad.Add(tjuv1);
+        stad.Add(tjuv2);
+        stad.Add(tjuv3);
+
+        //foreach (Personer person in stad)
+        //{
+        //    Console.WriteLine(person.Name);
+        //}
+
+        //foreach (Personer person in stad)
+        //{
+        //    Console.WriteLine(person.ShortName);
+        //}
 
 
 
 
 
-        // startar på random plats
-        int x = Random.Shared.Next(0, 100);
-        int y = Random.Shared.Next(0, 25);
+
+        //startar på random plats
+
 
 
         // disable muspekarn
         Console.CursorVisible = false;
-        Console.Clear();
+        //Console.Clear();
+        Console.SetWindowSize(125, 125);
+        Console.SetBufferSize(125, 125);
 
 
         // staden --------------------------------------------
@@ -59,44 +90,73 @@ class Program
         Console.WriteLine();
 
 
+        //int x = Random.Shared.Next(0, 70);
+        //int y = Random.Shared.Next(0, 15);
+
         // staden --------------------------------------------
 
 
         while (true)
         {
-            // skapar random rörelse som variabel
-            Random rand = new Random();
-
-            int oldX = x;
-            int oldY = y;
-
-            // går random upp ner höger vänster diagonalt
-            x += rand.Next(-1, 2); // går att skriva x += Random.Shared.Next(-1, 2); 
-            y += rand.Next(-1, 2); // går att skriva y += Random.Shared.Next(-1, 2); 
-
-            // gå igenom väggen, "teleporteras" till andra sidan
-            if (x < 1) x = 96;
-            // ai tips om teleportera tillbaka
-            else if (x > 96) x = 1;
-
-            // teleport
-            if (y < 1) y = 25;
-            // ai tips om teleportera tillbaka
-            else if (y > 25) y = 1;
 
 
-            // byter ut gamla X positionen med blank text, kan skriva . eller , för se vart X har gått
-            Console.SetCursorPosition(oldX, oldY);
-            Console.Write(" ");
 
-            // skriver X som flyttas runt
-            Console.SetCursorPosition(x, y);
-            Console.Write("X");
+            foreach (Personer person in stad)
 
-            // delay mellan rörelse
-            Thread.Sleep(200);
+            {
+
+                int oldX = person.PlatsX;
+                int oldY = person.PlatsY;
 
 
+
+
+                {
+
+
+                    if (person is Tjuv)
+
+                    person.PlatsX += Random.Shared.Next(-1, 2);
+                    person.PlatsY += Random.Shared.Next(-1, 2);
+
+
+
+
+
+
+
+                    //// gå igenom väggen, "teleporteras" till andra sidan
+                    if (person.PlatsX < 1) person.PlatsX = 96;
+                    //// ai tips om teleportera tillbaka
+                    else if (person.PlatsX > 96) person.PlatsX = 1;
+
+                    //// teleport
+                    if (person.PlatsY < 1) person.PlatsY = 25;
+                    //// ai tips om teleportera tillbaka
+                    else if (person.PlatsY > 25) person.PlatsY = 1;
+
+
+                    // byter ut gamla X positionen med blank text, kan skriva . eller , för se vart X har gått
+                    Console.SetCursorPosition(oldX, oldY);
+                    Console.Write(" ");
+
+                    // skriver X som flyttas runt
+
+
+                    //Console.SetCursorPosition(x, y);
+                    //Console.Write("X");
+                    Console.SetCursorPosition(person.PlatsX, person.PlatsY);
+                    //Console.Write(person.ShortName);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("T");
+                    Console.ResetColor();
+
+                    //delay mellan rörelse
+                    Thread.Sleep(200);
+                }
+
+            }
         }
+
     }
 }

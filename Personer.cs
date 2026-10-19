@@ -7,15 +7,18 @@ namespace TjuvOchPolis
     internal class Personer
     {
         public string Name { get; set; }
+        public string ShortName { get; set; }
         public int PlatsX { get; set; }
         public int PlatsY { get; set; }
+
         public ConsoleColor ForegroundColor  { get; set; }
-        public Personer(string name,int platsX,int platsY,ConsoleColor foregroundColor)
+        public Personer(string shortName, string name,int platsX,int platsY,ConsoleColor foregroundColor)
         {
             Name = name;
             PlatsX = platsX;
             PlatsY = platsY;
             ForegroundColor = foregroundColor;
+            ShortName = shortName;
         }
         public virtual void Move()
         {
@@ -26,7 +29,7 @@ namespace TjuvOchPolis
     class Tjuv : Personer
     {
         public string Stöldgods { get; set; }
-        public Tjuv(string name,int platsX, int platsY, ConsoleColor foregroundColor,string stöldgods):base (name,platsX,platsY,foregroundColor) 
+        public Tjuv(string shortName, string name,int platsX, int platsY, ConsoleColor foregroundColor,string stöldgods) : base (shortName, name,platsX,platsY,foregroundColor) 
         {
             Stöldgods = stöldgods;
         }
@@ -37,7 +40,7 @@ namespace TjuvOchPolis
     class Polis:Personer
     {
         public string Beslagtaget { get; set; }
-        public Polis(string name, int platsX,int platsY, ConsoleColor foregroundColor,string beslagtaget) : base(name,platsX,platsY,foregroundColor)
+        public Polis(string shortName, string name, int platsX,int platsY, ConsoleColor foregroundColor,string beslagtaget) : base(shortName, name,platsX,platsY,foregroundColor)
         {
             Beslagtaget = beslagtaget;
         }
@@ -46,7 +49,7 @@ namespace TjuvOchPolis
     class Medborgare:Personer
     {
         public string Tillhörigheter { get; set; }
-        public Medborgare(string name, int platsX,int platsY, ConsoleColor foregroundColor,string tillhörigheter) : base(name,platsX,platsY,foregroundColor)
+        public Medborgare(string shortName, string name, int platsX,int platsY, ConsoleColor foregroundColor,string tillhörigheter) : base(shortName, name,platsX,platsY,foregroundColor)
         {
             Tillhörigheter = tillhörigheter;
         }
