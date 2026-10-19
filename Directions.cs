@@ -2,6 +2,6 @@
 {
     internal class Directions
     {
-        public void 
+       // public void 
     }
 }

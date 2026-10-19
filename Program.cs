@@ -26,9 +26,9 @@ class Program
         List<Personer> stad = new List<Personer>();
 
 
-        Tjuv tjuv1 = new Tjuv("T", "Karlsson", Random.Shared.Next(1, 98), Random.Shared.Next(1, 98), ConsoleColor.Red, "");
-        Tjuv tjuv2 = new Tjuv("T", "Larsson", Random.Shared.Next(1, 98), Random.Shared.Next(1, 98), ConsoleColor.Red, "");
-        Tjuv tjuv3 = new Tjuv("T", "Svansson", Random.Shared.Next(1, 98), Random.Shared.Next(1, 98), ConsoleColor.Red, "");
+        Tjuv tjuv1 = new Tjuv( "Karlsson", Random.Shared.Next(1, 98), Random.Shared.Next(1, 98), "");
+        Tjuv tjuv2 = new Tjuv( "Larsson", Random.Shared.Next(1, 98), Random.Shared.Next(1, 98),  "");
+        Tjuv tjuv3 = new Tjuv("Svansson", Random.Shared.Next(1, 98), Random.Shared.Next(1, 98), "");
 
 
 
@@ -152,7 +152,7 @@ class Program
                     Console.ResetColor();
 
                     //delay mellan rörelse
-                    Thread.Sleep(200);
+                    Thread.Sleep(100);
                 }
 
             }
