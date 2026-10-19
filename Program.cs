@@ -120,7 +120,7 @@ class Program
                     person.PlatsY += Random.Shared.Next(-1, 2);
 
 
-
+                     
 
 
 
