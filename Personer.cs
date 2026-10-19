@@ -29,7 +29,7 @@ namespace TjuvOchPolis
     class Tjuv : Personer
     {
         public string Stöldgods { get; set; }
-        public Tjuv(string shortName, string name,int platsX, int platsY, ConsoleColor foregroundColor,string stöldgods) : base (shortName, name,platsX,platsY,foregroundColor) 
+        public Tjuv(string name,int platsX, int platsY, string stöldgods) : base (name,platsX,platsY) 
         {
             Stöldgods = stöldgods;
         }
@@ -40,7 +40,7 @@ namespace TjuvOchPolis
     class Polis:Personer
     {
         public string Beslagtaget { get; set; }
-        public Polis(string shortName, string name, int platsX,int platsY, ConsoleColor foregroundColor,string beslagtaget) : base(shortName, name,platsX,platsY,foregroundColor)
+        public Polis( string name, int platsX,int platsY,string beslagtaget) : base( name,platsX,platsY)
         {
             Beslagtaget = beslagtaget;
         }
@@ -49,7 +49,7 @@ namespace TjuvOchPolis
     class Medborgare:Personer
     {
         public string Tillhörigheter { get; set; }
-        public Medborgare(string shortName, string name, int platsX,int platsY, ConsoleColor foregroundColor,string tillhörigheter) : base(shortName, name,platsX,platsY,foregroundColor)
+        public Medborgare(string name, int platsX,int platsY, string tillhörigheter) : base(name,platsX,platsY)
         {
             Tillhörigheter = tillhörigheter;
         }
