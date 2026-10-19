@@ -7,18 +7,18 @@ namespace TjuvOchPolis
     internal class Personer
     {
         public string Name { get; set; }
-        public string ShortName { get; set; }
+        
         public int PlatsX { get; set; }
         public int PlatsY { get; set; }
 
-        public ConsoleColor ForegroundColor  { get; set; }
-        public Personer(string shortName, string name,int platsX,int platsY,ConsoleColor foregroundColor)
+        
+        public Personer( string name,int platsX,int platsY)
         {
             Name = name;
             PlatsX = platsX;
             PlatsY = platsY;
-            ForegroundColor = foregroundColor;
-            ShortName = shortName;
+            
+            
         }
         public virtual void Move()
         {
