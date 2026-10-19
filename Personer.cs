@@ -32,6 +32,7 @@ namespace TjuvOchPolis
         }
         public override void Move()
         {
+
         }
     }
     class Polis:Personer

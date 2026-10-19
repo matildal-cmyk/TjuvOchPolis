@@ -10,17 +10,18 @@ class Program
 
 
         List<Personer> list = new List<Personer>();
-        Tjuv tjuv = new Tjuv("Lasse", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, "pengar");
+        
         Polis polis = new Polis("Kling", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.DarkCyan, "smycken");
         Medborgare medborgare = new Medborgare("Fru Larsson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.DarkYellow, "halsband");
-        list.Add(tjuv);
+        
         list.Add(polis);
         list.Add(medborgare);
+        list.Add(new Tjuv("Karlsson",Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
+        list.Add(new Tjuv("Lasse", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
+        list.Add(new Tjuv("Bengt", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
+        list.Add(new Tjuv("Kalle", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
 
-
-
-
-
+        
         // startar på random plats
         int x = Random.Shared.Next(0, 100);
         int y = Random.Shared.Next(0, 25);
@@ -90,7 +91,11 @@ class Program
             Console.Write(" ");
 
             // skriver X som flyttas runt
-            Console.SetCursorPosition(x, y);
+
+
+            //Console.SetCursorPosition(x, y);
+            //Console.Write("X");
+            Console.SetCursorPosition((Tjuv)Personer).PlatsX, ((Tjuv)Personer).PlatsY);
             Console.Write("X");
 
             // delay mellan rörelse
