@@ -5,30 +5,18 @@ using TjuvOchPolis;
 class Program
 {
     static void Main()
-    {
-
-
-
-        //List<Personer> list = new List<Personer>();
-
-        //Polis polis = new Polis("Kling", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.DarkCyan, "smycken");
-        //Medborgare medborgare = new Medborgare("Fru Larsson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.DarkYellow, "halsband");
-
-        //list.Add(polis);
-        //list.Add(medborgare);
-        //list.Add(new Tjuv("Karlsson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
-        //list.Add(new Tjuv("Lasse", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
-        //list.Add(new Tjuv("Bengt", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
-        //list.Add(new Tjuv("Kalle", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
-
-
-
+    { 
         List<Personer> stad = new List<Personer>();
 
-        //stad.Add(new Polis("Klang", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
-        //stad.Add(new Tjuv("Lasse", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
-        //list.Add(new Tjuv("Bengt", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
-        //list.Add(new Tjuv("Kling", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
+        stad.Add(new Polis("Klang", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
+        stad.Add(new Polis("Lasse", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
+        stad.Add(new Polis("Bengt", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
+        stad.Add(new Polis("Kling", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
+
+        stad.Add(new Medborgare("Lindström", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
+        stad.Add(new Medborgare("Pettersson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
+        stad.Add(new Medborgare("Lundström", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
+        stad.Add(new Medborgare("Andersson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
 
 
         stad.Add(new Tjuv("Karlsson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
@@ -37,14 +25,12 @@ class Program
         stad.Add(new Tjuv("Kalle", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
 
 
-        //stad.Add(tjuv1);
-        //stad.Add(tjuv2);
-        //stad.Add(tjuv3);
 
-        //foreach (Personer person in stad)
-        //{
-        //    Console.WriteLine(person.Name);
-        //}
+
+        foreach (Personer person in stad)
+        {
+            Console.WriteLine(person.Direction);
+        }
 
         //foreach (Personer person in stad)
         //{
