@@ -25,8 +25,8 @@ class Program
 
         List<Personer> stad = new List<Personer>();
 
-        stad.Add(new Polis("Klang", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
-        stad.Add(new Tjuv("Lasse", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
+        //stad.Add(new Polis("Klang", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
+        //stad.Add(new Tjuv("Lasse", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
         //list.Add(new Tjuv("Bengt", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
         //list.Add(new Tjuv("Kling", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
 
@@ -37,9 +37,9 @@ class Program
         stad.Add(new Tjuv("Kalle", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
 
 
-        stad.Add(tjuv1);
-        stad.Add(tjuv2);
-        stad.Add(tjuv3);
+        //stad.Add(tjuv1);
+        //stad.Add(tjuv2);
+        //stad.Add(tjuv3);
 
         //foreach (Personer person in stad)
         //{
