@@ -1,42 +1,53 @@
-﻿namespace TjuvOchPolis
+﻿using TjuvOchPolis;
+
+namespace CaseTest
 {
-    internal class Directions
+    internal class Program
     {
-        static int Rulla()
+        static void Main(string[] args)
         {
-            int rnd = Random.Shared.Next(1, 10);
-            return rnd;
-        }
 
-        public void riktningar(Random rnd)
-        {
-            //int [,] Position;
-            //{
-            //    case 1:
-            //    [+1,+1];
-            //        break;
 
-            //    case 2:
-            //        break;
-            //    case 3:
-                    
-            //        break;
-            //    case 4:
-            //        break;
-            //    case 5:
-            //        break;
-            //    case 6:
-            //        break;
-            //    case7:
-            //        break;
-            //    case8:
-            //        break;
-            //    case9:
-            //        break;
-                
-            
-        
-            
+            Random rnd = new Random();
+            int value = rnd.Next(1, 5);
+            Console.WriteLine("Random value = " + value);
+
+            int posX = 0;
+            int posY = 0;
+
+            switch (value)
+            {
+                case 1:
+                    posX += 0;
+                    posY += 1;
+                    Console.WriteLine("Direction är y: " + posY + " direction x:" + posX);
+                    break;
+
+                case 2:
+                    posX += 1;
+                    posY += 0;
+                    Console.WriteLine("Direction är y: " + posY + " direction x:" + posX);
+                    break;
+
+                case 3:
+                    posX += 1;
+                    posY += 1;
+                    Console.WriteLine("Direction är y: " + posY + " direction x:" + posX);
+                    break;
+
+                default:
+                    Console.WriteLine("Direction är y: " + posY + " direction x:" + posX);
+                    break;
+
+
+
+
+            }
+
+
+
+
+
 
         }
     }
