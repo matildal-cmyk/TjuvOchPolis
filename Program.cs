@@ -6,9 +6,6 @@ class Program
 {
     static void Main()
     {
-
-
-
         List<Personer> list = new List<Personer>();
         
         Polis polis = new Polis("Kling", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.DarkCyan, "smycken");
