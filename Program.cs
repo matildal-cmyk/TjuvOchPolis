@@ -8,21 +8,21 @@ class Program
     { 
         List<Personer> stad = new List<Personer>();
 
-        //stad.Add(new Polis("Klang", Random.Shared.Next(1, 25), Random.Shared.Next(1, 95), -1,-1, ""));
-        //stad.Add(new Polis("Lasse", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), -1,0, ""));
-        //stad.Add(new Polis("Bengt", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
-        //stad.Add(new Polis("Kling", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Rando,m.Shared.Next(1, 9), ""));
+        stad.Add(new Polis("Klang", Random.Shared.Next(1, 25), Random.Shared.Next(1, 95), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Polis("Lasse", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Polis("Bengt", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Polis("Kling", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
 
-        //stad.Add(new Medborgare("Lindström", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
-        //stad.Add(new Medborgare("Pettersson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
-        //stad.Add(new Medborgare("Lundström", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
-        //stad.Add(new Medborgare("Andersson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
+        stad.Add(new Medborgare("Lindström", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Medborgare("Pettersson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Medborgare("Lundström", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Medborgare("Andersson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
 
 
-        stad.Add(new Tjuv("Karlsson", Random.Shared.Next(1, 85), Random.Shared.Next(1, 85), -1,-1, ""));
-        stad.Add(new Tjuv("Larsson", Random.Shared.Next(1, 85), Random.Shared.Next(1, 85), -1,0, ""));
-        stad.Add(new Tjuv("Svansson", Random.Shared.Next(1, 85), Random.Shared.Next(1, 85), +1,+1, ""));
-        stad.Add(new Tjuv("Kalle", Random.Shared.Next(1, 85), Random.Shared.Next(1, 85), +1,0, ""));
+        stad.Add(new Tjuv("Karlsson", Random.Shared.Next(1, 85), Random.Shared.Next(1, 85), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Tjuv("Larsson", Random.Shared.Next(1, 85), Random.Shared.Next(1, 85), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Tjuv("Svansson", Random.Shared.Next(1, 85), Random.Shared.Next(1, 85), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Tjuv("Kalle", Random.Shared.Next(1, 85), Random.Shared.Next(1, 85), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
 
 
 
@@ -138,11 +138,31 @@ class Program
 
                     }
 
+                    if (person is Medborgare)
 
+                    {
+
+                        Console.SetCursorPosition(person.PlatsX, person.PlatsY);
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write("M");
+                        Console.ResetColor();
+
+                    }
+
+                    if (person is Polis)
+
+                    {
+
+                        Console.SetCursorPosition(person.PlatsX, person.PlatsY);
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.Write("P");
+                        Console.ResetColor();
+
+                    }
 
 
                     //delay mellan rörelse
-                    Thread.Sleep(100);
+                    Thread.Sleep(75);
                 }
 
             }
