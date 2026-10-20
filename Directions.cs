@@ -4,7 +4,7 @@ namespace CaseTest
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public void Directions()
         {
 
 
