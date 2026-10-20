@@ -30,6 +30,8 @@ class Program
         foreach (Personer person in stad)
         {
             Console.WriteLine(person.Direction);
+            //Kan man inte anropa metoden directions här?? 
+            
         }
 
         //foreach (Personer person in stad)

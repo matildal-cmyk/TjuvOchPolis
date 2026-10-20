@@ -4,7 +4,7 @@ namespace CaseTest
 {
     internal class Program
     {
-        public void Directions()
+        public void Directions(Personer person)
         {
 
 
