@@ -78,7 +78,12 @@ class Program
         // --------------------------------------------------------
 
 
-
+        Console.Write("=NEWSFEED");
+        for (int g = 0; g <= 91; g++)
+        {
+            Console.Write("=");
+        }
+        Console.WriteLine();
 
         //skriva ut info under staden?
         //foreach (Personer person in stad)

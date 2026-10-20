@@ -7,7 +7,6 @@ namespace TjuvOchPolis
     internal class Personer
     {
         public string Name { get; set; }
-        
         public int PlatsX { get; set; }
         public int PlatsY { get; set; }
         public int DirectionX { get; set; }
