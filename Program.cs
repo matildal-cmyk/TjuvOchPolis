@@ -27,7 +27,10 @@ class Program
 
 
 
-
+        foreach (Personer person in stad)
+        {
+            Console.WriteLine(person.Direction);
+        }
 
         //foreach (Personer person in stad)
         //{
