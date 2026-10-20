@@ -103,11 +103,11 @@ class Program
                 int oldX = person.PlatsX;
                 int oldY = person.PlatsY;
                 {
-                    if (person is Tjuv)
-                    {
-                        person.PlatsX += person.DirectionX;
-                        person.PlatsY += person.DirectionY;
-                    }
+                    
+                    
+                     person.PlatsX += person.DirectionX;
+                     person.PlatsY += person.DirectionY;
+                    
 
                     //// gå igenom väggen, "teleporteras" till andra sidan
                     if (person.PlatsX < 1) person.PlatsX = 96;
@@ -127,13 +127,19 @@ class Program
                     // skriver X som flyttas runt
 
 
-                    //Console.SetCursorPosition(x, y);
-                    //Console.Write("X");
-                    Console.SetCursorPosition(person.PlatsX, person.PlatsY);
-                    //Console.Write(person.ShortName);
+                    if (person is Tjuv)
+
+                    {
+
+                    Console.SetCursorPosition(person.PlatsX, person.PlatsY);                    
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("T");
                     Console.ResetColor();
+
+                    }
+
+
+
 
                     //delay mellan rörelse
                     Thread.Sleep(100);
