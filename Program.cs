@@ -27,10 +27,7 @@ class Program
 
 
 
-        foreach (Personer person in stad)
-        {
-            Console.WriteLine(person.Direction);
-        }
+
 
         //foreach (Personer person in stad)
         //{
@@ -85,6 +82,9 @@ class Program
         //int y = Random.Shared.Next(0, 15);
 
         // staden --------------------------------------------
+
+
+
 
 
         foreach (Personer person in stad)
