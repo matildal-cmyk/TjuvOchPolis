@@ -10,13 +10,15 @@ namespace TjuvOchPolis
         
         public int PlatsX { get; set; }
         public int PlatsY { get; set; }
+        public int Direction { get; set; }
 
         
-        public Personer( string name,int platsX,int platsY)
+        public Personer( string name,int platsX,int platsY, int direction)
         {
             Name = name;
             PlatsX = platsX;
             PlatsY = platsY;
+            Direction = direction;
             
             
         }
@@ -29,7 +31,7 @@ namespace TjuvOchPolis
     class Tjuv : Personer
     {
         public string Stöldgods { get; set; }
-        public Tjuv(string name,int platsX, int platsY, string stöldgods) : base (name,platsX,platsY) 
+        public Tjuv(string name,int platsX, int platsY,int direction, string stöldgods) : base (name,platsX,platsY,direction) 
         {
             Stöldgods = stöldgods;
         }
@@ -40,7 +42,7 @@ namespace TjuvOchPolis
     class Polis:Personer
     {
         public string Beslagtaget { get; set; }
-        public Polis( string name, int platsX,int platsY,string beslagtaget) : base( name,platsX,platsY)
+        public Polis( string name, int platsX,int platsY,int direction,string beslagtaget) : base( name,platsX,platsY,direction)
         {
             Beslagtaget = beslagtaget;
         }
@@ -49,7 +51,7 @@ namespace TjuvOchPolis
     class Medborgare:Personer
     {
         public string Tillhörigheter { get; set; }
-        public Medborgare(string name, int platsX,int platsY, string tillhörigheter) : base(name,platsX,platsY)
+        public Medborgare(string name, int platsX,int platsY, int direction,string tillhörigheter) : base(name,platsX,platsY,direction)
         {
             Tillhörigheter = tillhörigheter;
         }

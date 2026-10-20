@@ -25,11 +25,16 @@ class Program
 
         List<Personer> stad = new List<Personer>();
 
+        stad.Add(new Polis("Klang", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
+        stad.Add(new Tjuv("Lasse", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
+        //list.Add(new Tjuv("Bengt", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
+        //list.Add(new Tjuv("Kling", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), ConsoleColor.Red, ""));
 
-        Tjuv tjuv1 = new Tjuv( "Karlsson", Random.Shared.Next(1, 98), Random.Shared.Next(1, 98), "");
-        Tjuv tjuv2 = new Tjuv( "Larsson", Random.Shared.Next(1, 98), Random.Shared.Next(1, 98),  "");
-        Tjuv tjuv3 = new Tjuv("Svansson", Random.Shared.Next(1, 98), Random.Shared.Next(1, 98), "");
 
+        stad.Add(new Tjuv("Karlsson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
+        stad.Add(new Tjuv("Larsson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
+        stad.Add(new Tjuv("Svansson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
+        stad.Add(new Tjuv("Kalle", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(1, 9), ""));
 
 
         stad.Add(tjuv1);
