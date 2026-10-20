@@ -46,8 +46,7 @@ class Program
         // disable muspekarn
         Console.CursorVisible = false;
         //Console.Clear();
-        //Console.SetWindowSize(125, 125);
-        //Console.SetBufferSize(125, 125);
+
 
 
         // staden --------------------------------------------
