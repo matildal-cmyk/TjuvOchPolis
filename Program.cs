@@ -8,21 +8,21 @@ class Program
     { 
         List<Personer> stad = new List<Personer>();
 
-        stad.Add(new Polis("Klang", Random.Shared.Next(1, 25), Random.Shared.Next(1, 95), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
-        stad.Add(new Polis("Lasse", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
-        stad.Add(new Polis("Bengt", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
-        stad.Add(new Polis("Kling", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Polis("Klang", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Polis("Lasse", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Polis("Bengt", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Polis("Kling", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
 
-        stad.Add(new Medborgare("Lindström", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
-        stad.Add(new Medborgare("Pettersson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
-        stad.Add(new Medborgare("Lundström", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
-        stad.Add(new Medborgare("Andersson", Random.Shared.Next(1, 25), Random.Shared.Next(1, 98), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Medborgare("Lindström", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Medborgare("Pettersson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Medborgare("Lundström", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Medborgare("Andersson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
 
 
-        stad.Add(new Tjuv("Karlsson", Random.Shared.Next(1, 85), Random.Shared.Next(1, 85), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
-        stad.Add(new Tjuv("Larsson", Random.Shared.Next(1, 85), Random.Shared.Next(1, 85), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
-        stad.Add(new Tjuv("Svansson", Random.Shared.Next(1, 85), Random.Shared.Next(1, 85), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
-        stad.Add(new Tjuv("Kalle", Random.Shared.Next(1, 85), Random.Shared.Next(1, 85), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Tjuv("Karlsson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Tjuv("Larsson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Tjuv("Svansson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
+        stad.Add(new Tjuv("Kalle", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ""));
 
 
 
@@ -46,8 +46,8 @@ class Program
         // disable muspekarn
         Console.CursorVisible = false;
         //Console.Clear();
-        Console.SetWindowSize(125, 125);
-        Console.SetBufferSize(125, 125);
+        //Console.SetWindowSize(125, 125);
+        //Console.SetBufferSize(125, 125);
 
 
         // staden --------------------------------------------
