@@ -101,18 +101,14 @@ class Program
                 int oldY = person.PlatsY;
                 {
                     
-                    
+                    //plats x+y blir person direction x+y, kanske onödigt och kan ha person.directionX och Y direkt?
                      person.PlatsX += person.DirectionX;
                      person.PlatsY += person.DirectionY;
                     
 
-                    //// gå igenom väggen, "teleporteras" till andra sidan
-                    
+                    //// gå igenom väggen, "teleporteras" till andra sidan                    
                     if (person.PlatsX < 1) person.PlatsX = 96;
-                    else if (person.PlatsX > 96) person.PlatsX = 1;
-
-                    //// teleport
-                    
+                    else if (person.PlatsX > 96) person.PlatsX = 1;                                       
                     if (person.PlatsY < 1) person.PlatsY = 25;
                     else if (person.PlatsY > 25) person.PlatsY = 1;
 
