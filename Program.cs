@@ -106,7 +106,7 @@ class Program
                 int oldY = person.PlatsY;
                 {
                     
-                    //plats x+y blir person direction x+y, kanske onödigt och kan ha person.directionX och Y direkt?
+                    //personer rör sig x+y baserat på deras random directionX+Y
                      person.PlatsX += person.DirectionX;
                      person.PlatsY += person.DirectionY;
                     
@@ -125,7 +125,7 @@ class Program
 
                     
 
-                    //skriver ut bokstav med olika färger per person typ
+                    //skriver ut bokstav med olika färger per person
                     if (person is Tjuv)
 
                     {
