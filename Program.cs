@@ -29,70 +29,14 @@ class Program
 
         // --------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
+        // staden start --------------------------------------------
+        Places city = new Places(95, new int[25, 98], 93);
+        city.Build();
 
 
         // disable muspekarn
         Console.CursorVisible = false;
         //Console.Clear();
-
-
-
-        // staden start --------------------------------------------
-        Console.Write("=CITY");
-        for (int tak = 0; tak <= 95; tak++)
-        {
-            Console.Write("=");
-        }
-        Console.WriteLine();
-
-        //Rita upp "staden"
-        string[,] city = new string[25, 98];//100-2 för x
-        for (int i = 0; i <= city.GetLength(0); i++)
-        {
-            Console.Write("x");
-            for (int j = 0; j <= city.GetLength(1); j++)
-            {
-                Console.Write(" ");
-            }
-            Console.Write("x");
-            Console.WriteLine();
-        }
-        Console.Write("=STATUS");
-        for (int g = 0; g <= 93; g++)
-        {
-            Console.Write("=");
-        }
-        Console.WriteLine();
-        // --------------------------------------------------------
-
-
-        Console.Write("=NEWSFEED");
-        for (int g = 0; g <= 91; g++)
-        {
-            Console.Write("=");
-        }
-        Console.WriteLine();
-
-        //skriva ut info under staden?
-        //foreach (Personer person in stad)
-        //{
-        //    Console.WriteLine("direction stuff: " + person.Directions);
-        //}
-
-
-
 
 
         // rörelse+print loop
