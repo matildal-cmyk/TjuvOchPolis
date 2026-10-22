@@ -29,6 +29,16 @@ class Program
 
         // --------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.Write("Gör fullscreen och ctrl-scroll down för kontrollera zoom. ");
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Tryck [ENTER] för start!");
+        Console.ResetColor();
+        Console.ReadKey();
+        Console.Clear();
+
+
         // staden start --------------------------------------------
         Places city = new Places(95, new int[25, 98], 93);
         city.Build();
