@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TjuvOchPolis
 {
-        internal class Places
+        public class Places
         {
             public int Roof { get; set; }
             public int[,] Middle { get; set; }
@@ -43,8 +43,77 @@ namespace TjuvOchPolis
                 }
                 Console.WriteLine();
             }
+        }
+        class Fattighus : Places
+        {
+            public Fattighus(int roof, int[,] middle, int floor) : base(roof, middle, floor)
+            {
 
+            }
+            public override void Build()
+            {
+                Console.Write("-FATTIGHUS");
+                for (int i = 0; i < Roof; i++)
+                {
+                    Console.Write("-");
+                }
+                Console.WriteLine();
+
+                for (int i = 0; i < Middle.GetLength(0); i++)
+                {
+                    Console.Write("|");
+                    for (int j = 0; j < Middle.GetLength(1); j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.Write("|");
+                    Console.WriteLine();
+                }
+
+                for (int i = 0; i < Floor; i++)
+                {
+                    Console.Write("-");
+                }
+                Console.WriteLine();
+
+            }
+        }
+        class Prison : Places
+        {
+            public Prison(int roof, int[,] middle, int floor) : base(roof, middle, floor)
+            {
+
+            }
+            public override void Build()
+            {
+                Console.Write("-FÄNGELSE");
+                for (int i = 0; i < Roof; i++)
+                {
+                    Console.Write("-");
+                }
+                Console.WriteLine();
+
+                for (int i = 0; i < Middle.GetLength(0); i++)
+                {
+                    Console.Write("|");
+                    for (int j = 0; j < Middle.GetLength(1); j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.Write("|");
+                    Console.WriteLine();
+                }
+
+                for (int i = 0; i < Floor; i++)
+                {
+                    Console.Write("-");
+                }
+                Console.WriteLine();
+
+
+
+
+            }
         }
     }
-
 
