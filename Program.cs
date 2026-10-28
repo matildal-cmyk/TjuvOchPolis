@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _10._21.ArrayListTest;
+using System;
 using System.Threading;
 using TjuvOchPolis;
 
@@ -9,23 +10,34 @@ class Program
         // skapar lista med personer -----------------------------------------------------------------------------------------------------------------------------
         List<Personer> stad = new List<Personer>();
 
-        stad.Add(new Polis("Klang", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), []));
-        stad.Add(new Polis("Lasse", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), []));
-        stad.Add(new Polis("Bengt", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), []));
-        stad.Add(new Polis("Kling", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), []));
+        stad.Add(new Polis("Klang2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Polis("Lasse2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Polis("Bengt2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Polis("Kling2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Polis("Klang2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Polis("Lasse2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Polis("Bengt2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Polis("Kling2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
 
-        stad.Add(new Medborgare("Lindström", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1,2),["Mobil","nycklar"]));
-        stad.Add(new Medborgare("Pettersson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ["Mobil", "nycklar"]));
-        stad.Add(new Medborgare("Lundström", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ["Mobil", "nycklar"]));
-        stad.Add(new Medborgare("Andersson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), ["Mobil", "nycklar"]));
+        stad.Add(new Medborgare("Lindström", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Medborgare("Pettersson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Medborgare("Lundström", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Medborgare("Andersson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Medborgare("Lindström2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Medborgare("Pettersson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Medborgare("Lundström2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Medborgare("Andersson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+
+        stad.Add(new Tjuv("Karlsson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Larsson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Svansson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Kalle", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Karlsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Larsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Svansson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Kalle2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
 
 
-        stad.Add(new Tjuv("Karlsson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), []));
-        stad.Add(new Tjuv("Larsson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), []));
-        stad.Add(new Tjuv("Svansson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), []));
-        stad.Add(new Tjuv("Kalle", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2), []));
-
-      
 
         // --------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -50,103 +62,165 @@ class Program
         fattighus.Build();
 
 
+
+
         // disable muspekarn
         Console.CursorVisible = false;
         //Console.Clear();
-       
+
+
+        Console.SetCursorPosition(105, 1);
+        Console.WriteLine("---TJUVFEED---");
+        Console.SetCursorPosition(105, 14);
+        Console.WriteLine("---POLISFEED---");
+
+
+
 
 
         // rörelse+print loop
         while (true)
         {
-            foreach (Personer person in stad)
 
+
+
+
+            foreach (Personer person in stad)
             {
+
                 //foreach (Tjuv tjuv in stad)
                 //{
-                    //foreach (Polis polis in stad)
-                    //{
-                    //    if (tjuv.PlatsX == polis.PlatsX && tjuv.PlatsY == polis.PlatsY)
-                    //    {
-                    //        Console.WriteLine("Polis tar tjuv");
-                    //    }
+                //    foreach (Polis polis in stad)
+                //    {
+                //        if (tjuv.PlatsX == polis.PlatsX && tjuv.PlatsY == polis.PlatsY)
+                //        {
+                //            Console.WriteLine("Polis tar tjuv");
+                //        }
 
-                    //}
-
-
-               // }
+                //    }
 
 
-                //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text [rad 125].
-                int oldX = person.PlatsX;
-                int oldY = person.PlatsY;
+                //}
+
+                //foreach (var tjuv in stad.OfType<Tjuv>())
+                //{
+                //    foreach (var polis in stad.OfType<Polis>())
+                //    {
+                //        if (tjuv.PlatsX == polis.PlatsX && tjuv.PlatsY == polis.PlatsY)
+                //        {
+                //            Console.WriteLine("Polis tar tjuv");
+                //        }
+                //    }
+                //}
+
+
+                foreach (var personTjuv in stad)
                 {
-                    
-                    //personer rör sig x+y baserat på deras random directionX+Y
-                     person.PlatsX += person.DirectionX;
-                     person.PlatsY += person.DirectionY;
+                    if (personTjuv is Tjuv tjuv)
+                    {
+                        foreach (var personMedborgare in stad)
+                        {
+                            if (personMedborgare is Medborgare medborgare)
+                            {
+                                
+                                if (tjuv.PlatsX == medborgare.PlatsX && tjuv.PlatsY == medborgare.PlatsY)
+                                {
+                                    
+                                    Helper.TjuvSno(tjuv, medborgare);
+                                }
+                            }
+                        }
+                    }
+                }
+                foreach (var personPolis in stad)
+                {
+                    if (personPolis is Polis polis)
+                    {
+                        foreach (var personTjuv in stad)
+                        {
+                            if (personTjuv is Tjuv tjuv)
+                            {
+                                
+                                if (polis.PlatsX == tjuv.PlatsX && polis.PlatsY == tjuv.PlatsY)
+                                {
+                                    Helper.PolisArrest(tjuv, polis);
+                                }
+                            }
+                        }
+                    }
+                }
 
-                   
-                    
 
-                    //// gå igenom väggen, "teleporteras" till andra sidan                    
-                    if (person.PlatsX < 1) person.PlatsX = 96;
-                    else if (person.PlatsX > 96) person.PlatsX = 1;                                       
-                    if (person.PlatsY < 1) person.PlatsY = 25;
-                    else if (person.PlatsY > 25) person.PlatsY = 1;
-
-
-
-                    // byter ut gamla X positionen med blank text, kan skriva . eller , för se vart X har gått
-                    Console.SetCursorPosition(oldX, oldY);
-                    Console.Write(" ");
-
-                    
-
-                    //skriver ut bokstav med olika färger per person
-                    if (person is Tjuv)
-
+                {
+                    //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
+                    int oldX = person.PlatsX;
+                    int oldY = person.PlatsY;
                     {
 
-                    Console.SetCursorPosition(person.PlatsX, person.PlatsY);                    
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("T");
-                    Console.ResetColor();
+                        //personer rör sig x+y += baserat på deras random directionX+Y
+                        person.PlatsX += person.DirectionX;
+                        person.PlatsY += person.DirectionY;
+
+
+                        //// gå igenom väggen, "teleporteras" till andra sidan                    
+                        if (person.PlatsX < 1) person.PlatsX = 96;
+                        else if (person.PlatsX > 96) person.PlatsX = 1;
+                        if (person.PlatsY < 1) person.PlatsY = 25;
+                        else if (person.PlatsY > 25) person.PlatsY = 1;
+
+
+
+                        // byter ut gamla X positionen med blank text, kan skriva . eller , för se vart X har gått
+                        Console.SetCursorPosition(oldX, oldY);
+                        Console.Write(" ");
+
                         
 
 
-                        
+                        //skriver ut bokstav med olika färger per person
+                        if (person is Tjuv)
+
+                        {
+
+                            Console.SetCursorPosition(person.PlatsX, person.PlatsY);
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write("T");
+                            Console.ResetColor();
+
+                        }
+
+                        if (person is Medborgare)
+
+                        {
+
+                            Console.SetCursorPosition(person.PlatsX, person.PlatsY);
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.Write("M");
+                            Console.ResetColor();
+
+                        }
+
+                        if (person is Polis)
+
+                        {
+
+                            Console.SetCursorPosition(person.PlatsX, person.PlatsY);
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.Write("P");
+                            Console.ResetColor();
+
+                        }
+
 
                     }
-
-                    if (person is Medborgare)
-
-                    {
-
-                        Console.SetCursorPosition(person.PlatsX, person.PlatsY);
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.Write("M");
-                        Console.ResetColor();
-
-                    }
-
-                    if (person is Polis)
-
-                    {
-
-                        Console.SetCursorPosition(person.PlatsX, person.PlatsY);
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.Write("P");
-                        Console.ResetColor();
-
-                    }
-
-
-                    //delay mellan rörelse
-                    Thread.Sleep(75);
+                    
+                    
                 }
 
             }
+            //delay mellan rörelse
+            Thread.Sleep(100);
+
         }
 
     }

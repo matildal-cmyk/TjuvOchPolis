@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,7 +14,7 @@ namespace TjuvOchPolis
         public int DirectionY { get; set; }
 
 
-        public Personer( string name,int platsX,int platsY, int directionX, int directionY)
+        public Personer(string name, int platsX, int platsY, int directionX, int directionY)
         {
             Name = name;
             PlatsX = platsX;
@@ -23,46 +24,53 @@ namespace TjuvOchPolis
 
 
         }
-        public virtual void Krasch()
+        public virtual void Move()
         {
+           
 
         }
 
     }
     class Tjuv : Personer
     {
-        //public string Stöldgods { get; set; }
-        public List <string> Items { get; set; } = new List <string>();
-        public Tjuv(string name,int platsX, int platsY, int directionX, int directionY, List <string> stöldgods) : base (name,platsX,platsY, directionX, directionY) 
-        {
-            Items = stöldgods;
-        }
-        //public override void Krasch()
-        //{
-        //    if ((Tjuv)Personer).PlatsX == Polis.PlatsX && Tjuv.PlatsY == Polis.PlatsY)
-                   
-        //    {
 
-        //    }
-        //}
-    }
-    class Polis:Personer
-    {
-        //public string Beslagtaget { get; set; }
-        public List<string> Items { get; set; } = new List<string>();
-        public Polis( string name, int platsX,int platsY,int directionX,int directionY, List<string> beslagtaget) : base( name,platsX,platsY, directionX, directionY)
+        public List<string> Stöldgods { get; set; } = new();
+        public Tjuv(string name, int platsX, int platsY, int directionX, int directionY) : base(name, platsX, platsY, directionX, directionY)
         {
-            Items = beslagtaget;
+
+        }
+        public override void Move()
+        {
+            
+
+        }
+    }
+    class Polis : Personer
+    {
+        public List<string> Beslagtaget { get; set; } = new();
+        public Polis(string name, int platsX, int platsY, int directionX, int directionY) : base(name, platsX, platsY, directionX, directionY)
+        {
+
         }
 
     }
-    class Medborgare:Personer
+    class Medborgare : Personer
     {
-        //public string Tillhörigheter { get; set; }
-        public List<string> Items { get; set; } = new List<string>();
-        public Medborgare(string name, int platsX,int platsY, int directionX, int directionY, List<string> tillhörigheter) : base(name,platsX,platsY,directionX, directionY)
+        public List<string> Inventory { get; set; } = new();
+        public Medborgare(string name, int platsX, int platsY, int directionX, int directionY) : base(name, platsX, platsY, directionX, directionY)
         {
-            Items = tillhörigheter;
+            Inventory.Add("nycklar");
+            Inventory.Add("en mobiltelefon");
+            Inventory.Add("kontanter");
+            Inventory.Add("en klocka");
         }
+
+        public override void Move()
+        {
+
+        }
+
+
     }
 }
+
