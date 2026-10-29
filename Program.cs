@@ -42,6 +42,9 @@ class Program
         // --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+
+        // intro
+
         Console.ForegroundColor = ConsoleColor.Blue;
         Console.Write("Gör fullscreen och ctrl-scroll down för kontrollera zoom. ");
         Console.ForegroundColor = ConsoleColor.Green;
@@ -68,20 +71,26 @@ class Program
         Console.CursorVisible = false;
         //Console.Clear();
 
+        int textradSida = 105;
+        int textradKolumn = 25;
 
-        Console.SetCursorPosition(105, 1);
+
+        Console.SetCursorPosition(textradSida, 1);
         Console.WriteLine("---TJUVFEED---");
         Console.SetCursorPosition(105, 14);
         Console.WriteLine("---POLISFEED---");
+        Console.SetCursorPosition(105, 28);
+        Console.WriteLine("---FÅNGEFEED---");
 
 
 
 
 
-        // rörelse+print loop
+        // 
         while (true)
         {
 
+            List<Tjuv> arresteradTjuv = new();
 
 
 
@@ -143,12 +152,22 @@ class Program
                                 
                                 if (polis.PlatsX == tjuv.PlatsX && polis.PlatsY == tjuv.PlatsY)
                                 {
-                                    Helper.PolisArrest(tjuv, polis);
+                                    Helper.PolisArrest(tjuv, fängelse, polis);
+                                    arresteradTjuv.Add(tjuv);
+                                   
+
+                                    //Helper.PrisonTransfer(tjuv, polis, fängelse);
                                 }
+
+                                
+
                             }
                         }
                     }
                 }
+
+
+
 
 
                 {
@@ -217,7 +236,36 @@ class Program
                     
                 }
 
+
+
+
+
+
+
+
+
             }
+
+
+            foreach (var tjuv in arresteradTjuv)
+            {
+                stad.Remove(tjuv);
+            }
+
+            int rad = 21;
+            foreach (Tjuv fånge in fängelse.prisonPlaces)
+            {
+                Console.SetCursorPosition(105, rad);
+                Console.WriteLine($"Fångar: {fånge.Name}                                        ");
+                rad++;
+            }
+
+
+            //stad.Remove(tjuv);
+            //break;
+
+
+
             //delay mellan rörelse
             Thread.Sleep(100);
 

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using TjuvOchPolis;
 
@@ -32,38 +34,97 @@ namespace _10._21.ArrayListTest
         }
 
 
-        public static void PolisArrest(Tjuv tjuv, Polis polis)
+        public static void PolisArrest(Tjuv tjuv, Prison prison, Polis polis)
         {
+
+            //ArrayList fängelseList = new ArrayList();
+            
+
+
+
             //stöldgods loop och lägger till det i lista allaItems så det går att skriva ut allt som blir taget.
             if (tjuv.Stöldgods.Count > 0)
             {
                 string allaItems = "";
 
-                for(int i = 0; i < tjuv.Stöldgods.Count; i++)
+                for (int i = 0; i < tjuv.Stöldgods.Count; i++)
                 {
                     allaItems += tjuv.Stöldgods[i] + ", ";
                 }
 
                 //while loop för ta bort item från tjuvlistan - kanske går att ha i samma loop som ovan men vette fan
-                while(tjuv.Stöldgods.Count > 0)
+                while (tjuv.Stöldgods.Count > 0)
                 {
                     string namnBeslagtagetItem = tjuv.Stöldgods[0];
 
                     tjuv.Stöldgods.RemoveAt(0);
 
                     polis.Beslagtaget.Add(namnBeslagtagetItem);
+                    
+                    
                 }
- 
+
+                prison.prisonPlaces.Add(tjuv);
+
+
+                //string tjuvTagen = "";
+
+                //for(int i = 0; i > 0; i++)
+                //{
+
+                //}
 
 
 
-                Console.SetCursorPosition(105, 15);
+                Console.SetCursorPosition(105, 25);
+                Console.WriteLine($"Polisen {polis.Name} arresterade {tjuv.Name} och sitter nu i {prison}");
+
+
+
+
+                Console.SetCursorPosition(105, 29);
                 Console.WriteLine($"Polisen {polis.Name} beslagtog stöldgods; {allaItems}tjuven {tjuv.Name} blev arresterad.                                           ");
+            }
+
+        }
+
+
+        public static void PrisonTransfer(Tjuv tjuv, Polis polis, Prison prison)
+        {
+            //stöldgods loop och lägger till det i lista allaItems så det går att skriva ut allt som blir taget.
+            if (tjuv.Stöldgods.Count > 0)
+            {
+
+
+                {
+
+
+
+                    //for (int i = 0; i < fängelseList.Count; i++)
+                    //{
+                    //    string arrayItem = string.Format($"Name is {fängelseList[i]}");
+                    //    Console.WriteLine(arrayItem);
+                    //}
+
+
+                }
             }
 
 
 
         }
 
+        public static void printFängelselist(Tjuv tjuv, Polis polis, Prison prison)
+        {
+
+            //for (int i = 0; i < prisonPlaces.Count; i++)
+            //{
+            //    string arrayItem = string.Format($"Name is {fängelseList[i]}");
+            //    Console.WriteLine(arrayItem);
+            //}
+
+        }
+
     }
+
 }

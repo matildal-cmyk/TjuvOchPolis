@@ -80,10 +80,14 @@ namespace TjuvOchPolis
         }
         class Prison : Places
         {
+            public List<Tjuv> prisonPlaces { get; set; } = new();
+
             public Prison(int roof, int[,] middle, int floor) : base(roof, middle, floor)
             {
 
             }
+
+
             public override void Build()
             {
                 Console.Write("-FÄNGELSE");
