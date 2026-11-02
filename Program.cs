@@ -279,7 +279,7 @@ class Program
             //break;
 
 
-
+                
             //delay mellan rörelse
             Thread.Sleep(100);
 
