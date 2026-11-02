@@ -22,11 +22,13 @@ namespace _10._21.ArrayListTest
                 //ta bort det slumpmässiga itemet+ger det till tjuven
                 medborgare.Inventory.RemoveAt(snoRandomItem);
                 tjuv.Stöldgods.Add(itemAttSno);
+                
 
 
                 //skriver ut
                 Console.SetCursorPosition(105, 2);
                 Console.Write($"Tjuven {tjuv.Name} rånade {medborgare.Name} på {itemAttSno}.                                          ");
+                
             }
 
 
@@ -76,13 +78,13 @@ namespace _10._21.ArrayListTest
 
 
 
-                Console.SetCursorPosition(105, 25);
-                Console.WriteLine($"Polisen {polis.Name} arresterade {tjuv.Name} och sitter nu i fängelse.                                           ");
+                //Console.SetCursorPosition(105, 15);
+                //Console.WriteLine($"Polisen {polis.Name} arresterade {tjuv.Name} och sitter nu i fängelse.                                           ");
 
 
 
 
-                Console.SetCursorPosition(105, 29);
+                Console.SetCursorPosition(105, 15);
                 Console.WriteLine($"Polisen {polis.Name} beslagtog stöldgods; {allaItems} tjuven {tjuv.Name} blev arresterad.                                           ");
             }
 

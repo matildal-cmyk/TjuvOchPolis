@@ -18,6 +18,11 @@ class Program
         stad.Add(new Polis("Lasse2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Polis("Bengt2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Polis("Kling2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Polis("Lasse2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Polis("Bengt2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Polis("Kling2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+
+        //
 
         stad.Add(new Medborgare("Lindström", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Medborgare("Pettersson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
@@ -27,11 +32,20 @@ class Program
         stad.Add(new Medborgare("Pettersson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Medborgare("Lundström2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Medborgare("Andersson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Medborgare("Pettersson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Medborgare("Lundström2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Medborgare("Andersson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+
+        //
 
         stad.Add(new Tjuv("Karlsson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Tjuv("Larsson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Tjuv("Svansson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Tjuv("Kalle", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Karlsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Larsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Svansson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Kalle2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Tjuv("Karlsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Tjuv("Larsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Tjuv("Svansson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
@@ -79,7 +93,7 @@ class Program
         Console.WriteLine("---TJUVFEED---");
         Console.SetCursorPosition(105, 14);
         Console.WriteLine("---POLISFEED---");
-        Console.SetCursorPosition(105, 28);
+        Console.SetCursorPosition(105, 40);
         Console.WriteLine("---FÅNGEFEED---");
 
 
@@ -92,82 +106,52 @@ class Program
 
             List<Tjuv> arresteradTjuv = new();
 
+            foreach (var personTjuv in stad)
+            {
+                if (personTjuv is Tjuv tjuv)
+                {
+                    foreach (var personMedborgare in stad)
+                    {
+                        if (personMedborgare is Medborgare medborgare)
+                        {
 
+                            if (tjuv.PlatsX == medborgare.PlatsX && tjuv.PlatsY == medborgare.PlatsY)
+                            {
+
+                                Helper.TjuvSno(tjuv, medborgare);
+
+                            }
+                        }
+                    }
+                }
+            }
+            foreach (var personPolis in stad)
+            {
+                if (personPolis is Polis polis)
+                {
+                    foreach (var personTjuv in stad)
+                    {
+                        if (personTjuv is Tjuv tjuv)
+                        {
+
+                            if (polis.PlatsX == tjuv.PlatsX && polis.PlatsY == tjuv.PlatsY)
+                            {
+                                Helper.PolisArrest(tjuv, fängelse, polis);
+                                arresteradTjuv.Add(tjuv);
+
+
+                                //Helper.PrisonTransfer(tjuv, polis, fängelse);
+                            }
+
+
+
+                        }
+                    }
+                }
+            }
 
             foreach (Personer person in stad)
             {
-
-                //foreach (Tjuv tjuv in stad)
-                //{
-                //    foreach (Polis polis in stad)
-                //    {
-                //        if (tjuv.PlatsX == polis.PlatsX && tjuv.PlatsY == polis.PlatsY)
-                //        {
-                //            Console.WriteLine("Polis tar tjuv");
-                //        }
-
-                //    }
-
-
-                //}
-
-                //foreach (var tjuv in stad.OfType<Tjuv>())
-                //{
-                //    foreach (var polis in stad.OfType<Polis>())
-                //    {
-                //        if (tjuv.PlatsX == polis.PlatsX && tjuv.PlatsY == polis.PlatsY)
-                //        {
-                //            Console.WriteLine("Polis tar tjuv");
-                //        }
-                //    }
-                //}
-
-
-                foreach (var personTjuv in stad)
-                {
-                    if (personTjuv is Tjuv tjuv)
-                    {
-                        foreach (var personMedborgare in stad)
-                        {
-                            if (personMedborgare is Medborgare medborgare)
-                            {
-                                
-                                if (tjuv.PlatsX == medborgare.PlatsX && tjuv.PlatsY == medborgare.PlatsY)
-                                {
-                                    
-                                    Helper.TjuvSno(tjuv, medborgare);
-                                }
-                            }
-                        }
-                    }
-                }
-                foreach (var personPolis in stad)
-                {
-                    if (personPolis is Polis polis)
-                    {
-                        foreach (var personTjuv in stad)
-                        {
-                            if (personTjuv is Tjuv tjuv)
-                            {
-                                
-                                if (polis.PlatsX == tjuv.PlatsX && polis.PlatsY == tjuv.PlatsY)
-                                {
-                                    Helper.PolisArrest(tjuv, fängelse, polis);
-                                    arresteradTjuv.Add(tjuv);
-                                   
-
-                                    //Helper.PrisonTransfer(tjuv, polis, fängelse);
-                                }
-
-                                
-
-                            }
-                        }
-                    }
-                }
-
-
-
 
 
                 {
@@ -246,29 +230,21 @@ class Program
                     
                 }
 
-
-
-
-
-
-
-
-
             }
 
-
+            // efter loopet och per varje arresteradtjuv = remove tjuv från stad
             foreach (var tjuv in arresteradTjuv)
             {
                 stad.Remove(tjuv);
             }
 
             
-
-            int rad = 21;
+            // skriver ut vilka fångar är i fängelset
+            int rad = 41;
             foreach (Tjuv fånge in fängelse.prisonPlaces)
             {
-                Console.SetCursorPosition(105, rad);
-                Console.WriteLine($"Fångar: {fånge.Name}                                        ");
+                Console.SetCursorPosition(105, rad);                
+                Console.WriteLine($"{fånge.Name}                                        ");
                 rad++;
             }
 
