@@ -250,6 +250,10 @@ class Program
 
 
 
+
+
+
+
             //stad.Remove(tjuv);
             //break;
 
