@@ -357,28 +357,6 @@ class Program
                 Console.WriteLine($"{fattigmedborgare.Name}                                        ");
                 rad3++;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
                 int oldX = fattigmedborgare.PlatsX;
                 int oldY = fattigmedborgare.PlatsY;
