@@ -6,7 +6,7 @@ using TjuvOchPolis;
 class Program
 {
     static void Main()
-    { 
+    {
         // skapar lista med personer -----------------------------------------------------------------------------------------------------------------------------
         List<Personer> stad = new List<Personer>();
 
@@ -79,7 +79,7 @@ class Program
         Fattighus fattighus = new Fattighus(40, new int[10, 48], 50); //för att det ska bli jämnt
         fattighus.Build();
 
-        
+
 
         // disable muspekarn
         Console.CursorVisible = false;
@@ -225,8 +225,8 @@ class Program
 
 
                     }
-                    
-                    
+
+
                 }
 
             }
@@ -237,30 +237,91 @@ class Program
                 stad.Remove(tjuv);
             }
 
-            
+
             // skriver ut vilka fångar är i fängelset
             int rad = 41;
             foreach (Tjuv fånge in fängelse.prisonPlaces)
             {
-                Console.SetCursorPosition(105, rad);                
+                Console.SetCursorPosition(105, rad);
                 Console.WriteLine($"{fånge.Name}                                        ");
                 rad++;
+
+
+
+
+
+
+
+                {
+                    //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
+                    int oldX = fånge.PlatsX;
+                    int oldY = fånge.PlatsY;
+                    {
+
+                        //personer rör sig x+y += baserat på deras random directionX+Y
+                        int DirectionX = Random.Shared.Next(-1, 2);
+                        int DirectionY = Random.Shared.Next(-1, 2);
+
+                        fånge.DirectionX = DirectionX;
+                        fånge.DirectionY = DirectionY;
+
+                        fånge.PlatsX += fånge.DirectionX;
+                        fånge.PlatsY += fånge.DirectionY;
+
+
+                        //// gå igenom väggen, "teleporteras" till andra sidan                    
+                        if (fånge.PlatsX < 1) fånge.PlatsX = 10;
+                        else if (fånge.PlatsX > 10) fånge.PlatsX = 1;
+
+                        if (fånge.PlatsY < 28) fånge.PlatsY = 37;
+                        else if (fånge.PlatsY > 37) fånge.PlatsY = 28;
+
+
+
+                        // byter ut gamla X positionen med blank text, kan skriva . eller , för se vart X har gått
+                        Console.SetCursorPosition(oldX, oldY);
+                        Console.Write(" ");
+
+
+                        // fängelse kordinater hörnen
+                        Console.SetCursorPosition(1, 28);
+                        Console.Write("X");
+                        Console.SetCursorPosition(10, 28);
+                        Console.Write("Y");
+                        Console.SetCursorPosition(10, 37);
+                        Console.Write("Z");
+                        Console.SetCursorPosition(1, 37);
+                        Console.Write("V");
+
+
+
+                        //skriver ut bokstav med olika färger per person
+                        if (fånge is Tjuv)
+
+                        {
+
+                            Console.SetCursorPosition(fånge.PlatsX, fånge.PlatsY);
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write("T");
+                            Console.ResetColor();
+
+                        }
+
+                        //stad.Remove(tjuv);
+                        //break;
+
+
+
+
+                    }
+                }
             }
-
-
-
-
-
-
-
-
-            //stad.Remove(tjuv);
-            //break;
-
 
 
             //delay mellan rörelse
             Thread.Sleep(100);
+
+
 
         }
 
