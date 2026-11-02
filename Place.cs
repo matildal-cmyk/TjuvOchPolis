@@ -46,7 +46,7 @@ namespace TjuvOchPolis
         }
         class Fattighus : Places
         {
-            public List<Medborgare> prisonPlaces { get; set; } = new();
+            public List<Medborgare> fattighusPlaces { get; set; } = new();
 
             public Fattighus(int roof, int[,] middle, int floor) : base(roof, middle, floor)
             {

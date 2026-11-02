@@ -92,6 +92,24 @@ namespace _10._21.ArrayListTest
 
 
 
+        public static void MedborgareFattighus(Medborgare medborgare, Fattighus fattighus)
+        {
+            if (medborgare.Inventory.Count == 0)
+            {
+                fattighus.fattighusPlaces.Add(medborgare);
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
 
         //public static void PrisonTransfer(Tjuv tjuv, Polis polis, Prison prison)
         //{
