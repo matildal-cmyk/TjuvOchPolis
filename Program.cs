@@ -238,13 +238,14 @@ class Program
             }
 
 
-            // skriver ut vilka fångar är i fängelset
+            // skriver ut vilka fångar är i fängelset 
             int rad = 41;
             foreach (Tjuv fånge in fängelse.prisonPlaces)
             {
                 Console.SetCursorPosition(105, rad);
                 Console.WriteLine($"{fånge.Name}                                        ");
                 rad++;
+            
 
 
 
@@ -314,6 +315,7 @@ class Program
 
 
                     }
+                    
                 }
             }
 
