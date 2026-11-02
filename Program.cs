@@ -61,7 +61,7 @@ class Program
         // intro
 
         Console.ForegroundColor = ConsoleColor.Blue;
-        Console.Write("Gör fullscreen och ctrl-scroll down för kontrollera zoom. ");        
+        Console.Write("Gör fullscreen och ctrl-scroll down för kontrollera zoom. ");
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Tryck [ENTER] för start!");
         Console.ResetColor();
@@ -122,19 +122,20 @@ class Program
             Console.ResetColor();
             //
 
-
+            // kollar om en key är pressed
             if (Console.KeyAvailable)
             {
+
                 ConsoleKeyInfo keyPress = Console.ReadKey(true);
 
-
+                //om keypress är 1 = +10 ms på threadsleep
                 if (keyPress.KeyChar == '1')
 
                 {
                     threadSleepSpeed += 10;
 
                 }
-                else if (keyPress.KeyChar == '2' && threadSleepSpeed > 10)
+                else if (keyPress.KeyChar == '2' && threadSleepSpeed > 10) // knapp2 blir -10 ms med failsafe(crashar vid threadsleep 0 och under)
                 {
                     threadSleepSpeed -= 10;
 
@@ -142,10 +143,10 @@ class Program
                 }
             }
 
-                //Console.WriteLine($"Speed is: {threadSleepSpeed} ms");
+            //Console.WriteLine($"Speed is: {threadSleepSpeed} ms");
 
-                //loop för kolla x+y position sno/arrestera
-                foreach (var personTjuv in stad)
+            //loop för kolla x+y position sno/arrestera
+            foreach (var personTjuv in stad)
             {
                 if (personTjuv is Tjuv tjuv)
                 {
