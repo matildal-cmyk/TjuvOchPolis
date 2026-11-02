@@ -97,7 +97,7 @@ class Program
             foreach (Personer person in stad)
             {
 
-                //foreach (Tjuv tjuv in stad)
+                //foreach (Tjuv tjuv in stad) 
                 //{
                 //    foreach (Polis polis in stad)
                 //    {
