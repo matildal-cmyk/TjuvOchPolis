@@ -61,11 +61,11 @@ class Program
         Prison fängelse = new Prison(1, new int[10, 10], 10);
         fängelse.Build();
 
+
         Fattighus fattighus = new Fattighus(40, new int[10, 48], 50); //för att det ska bli jämnt
         fattighus.Build();
 
-
-
+        
 
         // disable muspekarn
         Console.CursorVisible = false;
@@ -251,6 +251,8 @@ class Program
             {
                 stad.Remove(tjuv);
             }
+
+            
 
             int rad = 21;
             foreach (Tjuv fånge in fängelse.prisonPlaces)

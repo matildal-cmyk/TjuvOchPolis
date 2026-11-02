@@ -77,53 +77,55 @@ namespace _10._21.ArrayListTest
 
 
                 Console.SetCursorPosition(105, 25);
-                Console.WriteLine($"Polisen {polis.Name} arresterade {tjuv.Name} och sitter nu i {prison}");
+                Console.WriteLine($"Polisen {polis.Name} arresterade {tjuv.Name} och sitter nu i {prison}.                                           ");
 
 
 
 
                 Console.SetCursorPosition(105, 29);
-                Console.WriteLine($"Polisen {polis.Name} beslagtog stöldgods; {allaItems}tjuven {tjuv.Name} blev arresterad.                                           ");
+                Console.WriteLine($"Polisen {polis.Name} beslagtog stöldgods; {allaItems} tjuven {tjuv.Name} blev arresterad.                                           ");
             }
 
         }
 
 
-        public static void PrisonTransfer(Tjuv tjuv, Polis polis, Prison prison)
-        {
-            //stöldgods loop och lägger till det i lista allaItems så det går att skriva ut allt som blir taget.
-            if (tjuv.Stöldgods.Count > 0)
-            {
 
 
-                {
+        //public static void PrisonTransfer(Tjuv tjuv, Polis polis, Prison prison)
+        //{
+        //    //stöldgods loop och lägger till det i lista allaItems så det går att skriva ut allt som blir taget.
+        //    if (tjuv.Stöldgods.Count > 0)
+        //    {
 
 
-
-                    //for (int i = 0; i < fängelseList.Count; i++)
-                    //{
-                    //    string arrayItem = string.Format($"Name is {fängelseList[i]}");
-                    //    Console.WriteLine(arrayItem);
-                    //}
-
-
-                }
-            }
+        //        {
 
 
 
-        }
+        //            //for (int i = 0; i < fängelseList.Count; i++)
+        //            //{
+        //            //    string arrayItem = string.Format($"Name is {fängelseList[i]}");
+        //            //    Console.WriteLine(arrayItem);
+        //            //}
 
-        public static void printFängelselist(Tjuv tjuv, Polis polis, Prison prison)
-        {
 
-            //for (int i = 0; i < prisonPlaces.Count; i++)
-            //{
-            //    string arrayItem = string.Format($"Name is {fängelseList[i]}");
-            //    Console.WriteLine(arrayItem);
-            //}
+        //        }
+        //    }
 
-        }
+
+
+        //}
+
+        //public static void printFängelselist(Tjuv tjuv, Polis polis, Prison prison)
+        //{
+
+        //    //for (int i = 0; i < prisonPlaces.Count; i++)
+        //    //{
+        //    //    string arrayItem = string.Format($"Name is {fängelseList[i]}");
+        //    //    Console.WriteLine(arrayItem);
+        //    //}
+
+        //}
 
     }
 
