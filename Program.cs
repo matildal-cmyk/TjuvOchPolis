@@ -103,9 +103,11 @@ class Program
         // 
         while (true)
         {
-
+            //temporär lista för tjuvar som används för ta bort tjuv från stad lista senare
             List<Tjuv> arresteradTjuv = new();
 
+
+            //loop för kolla x+y position sno/arrestera
             foreach (var personTjuv in stad)
             {
                 if (personTjuv is Tjuv tjuv)
@@ -138,9 +140,6 @@ class Program
                             {
                                 Helper.PolisArrest(tjuv, fängelse, polis);
                                 arresteradTjuv.Add(tjuv);
-
-
-                                //Helper.PrisonTransfer(tjuv, polis, fängelse);
                             }
 
 
