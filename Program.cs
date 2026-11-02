@@ -86,7 +86,7 @@ class Program
         //Console.Clear();
 
         int textradSida = 105;
-        int textradKolumn = 25;
+        //int textradKolumn = 25;
 
         int rad2 = 61;
 
@@ -123,7 +123,7 @@ class Program
 
                             if (tjuv.PlatsX == medborgare.PlatsX && tjuv.PlatsY == medborgare.PlatsY)
                             {
-
+                                Helper.MedborgareFattighus(medborgare, fattighus);
                                 Helper.TjuvSno(tjuv, medborgare);
 
                             }
@@ -153,17 +153,17 @@ class Program
                 }
             }
 
-            
 
-           
 
-            
+
+
+
 
             foreach (Personer person in stad)
             {
 
-                
-                
+
+
 
 
 
@@ -191,15 +191,15 @@ class Program
                         Console.Write(" ");
 
 
-                        // fängelse kordinater hörnen
-                        Console.SetCursorPosition(1, 28);
-                        Console.Write("X");
-                        Console.SetCursorPosition(10, 28);
-                        Console.Write("Y");
-                        Console.SetCursorPosition(10, 37);
-                        Console.Write("Z");
-                        Console.SetCursorPosition(1, 37);
-                        Console.Write("V");
+                        //// fängelse kordinater hörnen
+                        //Console.SetCursorPosition(1, 28);
+                        //Console.Write("X");
+                        //Console.SetCursorPosition(10, 28);
+                        //Console.Write("Y");
+                        //Console.SetCursorPosition(10, 37);
+                        //Console.Write("Z");
+                        //Console.SetCursorPosition(1, 37);
+                        //Console.Write("V");
 
                         // fattighus kordinater
                         Console.SetCursorPosition(1, 40);
@@ -261,23 +261,15 @@ class Program
                 stad.Remove(tjuv);
             }
 
-            //int rad2 = 61;
-            //foreach (Medborgare medborgare in fattighus.fattighusPlaces)
-            //{
-                
-            //    Console.SetCursorPosition(105, rad2);
-            //    Console.WriteLine($"{medborgare.Name}                                        ");
-            //    rad2++;
-            //}
 
-                // skriver ut vilka fångar är i fängelset 
-                int rad = 41;
+            // skriver ut vilka fångar är i fängelset 
+            int rad = 41;
             foreach (Tjuv fånge in fängelse.prisonPlaces)
             {
                 Console.SetCursorPosition(105, rad);
                 Console.WriteLine($"{fånge.Name}                                        ");
                 rad++;
-            
+
 
 
 
@@ -347,9 +339,11 @@ class Program
 
 
                     }
-                    
+
                 }
             }
+
+
 
 
             foreach (var medborgare in medborgareTillFattighus)
@@ -357,84 +351,91 @@ class Program
                 stad.Remove(medborgare);
             }
 
+            int rad3 = 61;
 
-
-
-            foreach (var personMedborgare in stad)
+            foreach (Medborgare fattigmedborgare in fattighus.fattighusPlaces)
             {
-                if (personMedborgare is Medborgare medborgare)
+                Console.SetCursorPosition(105, rad3);
+                Console.WriteLine($"{fattigmedborgare.Name}                                        ");
+                rad3++;
+
                 {
-                    if (medborgare.Inventory.Count == 0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
+                    int oldXX = fattigmedborgare.PlatsX;
+                    int oldYY = fattigmedborgare.PlatsY;
                     {
-                        medborgareTillFattighus.Add(medborgare);
-                        Console.SetCursorPosition(105, rad2);
-                        Console.WriteLine($"{medborgare.Name}                                        ");
-                        rad2++;
-
-
-
-                        //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
-                        int oldX = medborgare.PlatsX;
-                        int oldY = medborgare.PlatsY;
-
 
                         //personer rör sig x+y += baserat på deras random directionX+Y
-                        int DirectionX = Random.Shared.Next(-1, 2);
-                        int DirectionY = Random.Shared.Next(-1, 2);
+                        int DirectionXX = Random.Shared.Next(-1, 2);
+                        int DirectionYY = Random.Shared.Next(-1, 2);
 
-                        medborgare.DirectionX = DirectionX;
-                        medborgare.DirectionY = DirectionY;
+                        fattigmedborgare.DirectionX = DirectionXX;
+                        fattigmedborgare.DirectionY = DirectionYY;
 
-                        medborgare.PlatsX += medborgare.DirectionX;
-                        medborgare.PlatsY += medborgare.DirectionY;
+                        fattigmedborgare.PlatsX += fattigmedborgare.DirectionX;
+                        fattigmedborgare.PlatsY += fattigmedborgare.DirectionY;
 
 
                         //// gå igenom väggen, "teleporteras" till andra sidan                    
-                        if (medborgare.PlatsX < 1)
+                        if (fattigmedborgare.PlatsX < 2)
                         {
-                            medborgare.PlatsX = 48;
+                            fattigmedborgare.PlatsX = 47;
                         }
-                        else if (medborgare.PlatsX > 48)
+                        else if (fattigmedborgare.PlatsX > 47)
                         {
-                            medborgare.PlatsX = 1;
+                            fattigmedborgare.PlatsX = 2;
                         }
-                        if (medborgare.PlatsY < 40)
+
+                        if (fattigmedborgare.PlatsY < 41)
                         {
-                            medborgare.PlatsY = 49;
+                            fattigmedborgare.PlatsY = 48;
                         }
-                        else if (medborgare.PlatsY > 40)
+                        else if (fattigmedborgare.PlatsY > 48)
                         {
-                            medborgare.PlatsY = 40;
+                            fattigmedborgare.PlatsY = 41;
                         }
 
 
 
                         // byter ut gamla X positionen med blank text, kan skriva . eller , för se vart X har gått
-                        Console.SetCursorPosition(oldX, oldY);
+                        Console.SetCursorPosition(oldXX, oldYY);
                         Console.Write(" ");
 
 
-                        // fängelse kordinater hörnen
-                        Console.SetCursorPosition(1, 28);
-                        Console.Write("X");
-                        Console.SetCursorPosition(10, 28);
-                        Console.Write("Y");
-                        Console.SetCursorPosition(10, 37);
-                        Console.Write("Z");
-                        Console.SetCursorPosition(1, 37);
-                        Console.Write("V");
 
 
 
                         //skriver ut bokstav med olika färger per person
-                        if (medborgare is Medborgare)
+                        if (fattigmedborgare is Medborgare)
 
                         {
 
-                            Console.SetCursorPosition(medborgare.PlatsX, medborgare.PlatsY);
+                            Console.SetCursorPosition(fattigmedborgare.PlatsX, fattigmedborgare.PlatsY);
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.Write("M");
                             Console.ResetColor();
+
 
 
                             //stad.Remove(tjuv);
@@ -443,7 +444,23 @@ class Program
 
 
 
+                            //}
+
+
+
+                         
+
                         }
+
+                        //delay mellan rörelse
+                        
+                        //Helper.MedborgareFattighus(medborgare, fattighus);
+
+
+                        //foreach(var )
+                        //Console.SetCursorPosition(105, rad2);
+                        //Console.WriteLine($"{medborgare.Name}                                        ");
+                        //rad2++;
 
 
 
@@ -451,21 +468,15 @@ class Program
 
                     }
 
-                    
-                    //Helper.MedborgareFattighus(medborgare, fattighus);
 
-
-
-
-
-
-
-
-                    //delay mellan rörelse
-                    Thread.Sleep(5);
                 }
-            }
-        }
 
+
+            }
+            Thread.Sleep(100);
+        }
     }
 }
+
+
+
