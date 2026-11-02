@@ -1,5 +1,6 @@
 ﻿using _10._21.ArrayListTest;
 using System;
+using System.Data;
 using System.Threading;
 using TjuvOchPolis;
 
@@ -60,7 +61,7 @@ class Program
         // intro
 
         Console.ForegroundColor = ConsoleColor.Blue;
-        Console.Write("Gör fullscreen och ctrl-scroll down för kontrollera zoom. ");
+        Console.Write("Gör fullscreen och ctrl-scroll down för kontrollera zoom. ");        
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Tryck [ENTER] för start!");
         Console.ResetColor();
@@ -100,7 +101,8 @@ class Program
         Console.WriteLine("---FATTIGHUS---");
 
 
-
+        // sätter hastighet på ThreadSleep
+        int threadSleepSpeed = 100;
 
         // 
         while (true)
@@ -109,10 +111,41 @@ class Program
             List<Tjuv> arresteradTjuv = new();
             List<Medborgare> medborgareTillFattighus = new();
 
+            // Hastighet för Threadsleep
+            Console.SetCursorPosition(200, 1);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Ändra hastighet: Tryck Tangent [1] för +10 ms, [2] för -10 ms       ");
+            Console.SetCursorPosition(200, 2);
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Hastighet är: {threadSleepSpeed} ms        ");
+            Console.ResetColor();
+            //
 
 
-            //loop för kolla x+y position sno/arrestera
-            foreach (var personTjuv in stad)
+            if (Console.KeyAvailable)
+            {
+                ConsoleKeyInfo keyPress = Console.ReadKey(true);
+
+
+                if (keyPress.KeyChar == '1')
+
+                {
+                    threadSleepSpeed += 10;
+
+                }
+                else if (keyPress.KeyChar == '2' && threadSleepSpeed > 10)
+                {
+                    threadSleepSpeed -= 10;
+
+
+                }
+            }
+
+                //Console.WriteLine($"Speed is: {threadSleepSpeed} ms");
+
+                //loop för kolla x+y position sno/arrestera
+                foreach (var personTjuv in stad)
             {
                 if (personTjuv is Tjuv tjuv)
                 {
@@ -459,7 +492,7 @@ class Program
 
 
             }
-            Thread.Sleep(100);
+            Thread.Sleep(threadSleepSpeed);
         }
     }
 }
