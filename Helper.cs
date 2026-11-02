@@ -77,7 +77,7 @@ namespace _10._21.ArrayListTest
 
 
                 Console.SetCursorPosition(105, 25);
-                Console.WriteLine($"Polisen {polis.Name} arresterade {tjuv.Name} och sitter nu i {prison}.                                           ");
+                Console.WriteLine($"Polisen {polis.Name} arresterade {tjuv.Name} och sitter nu i fängelse.                                           ");
 
 
 

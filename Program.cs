@@ -193,7 +193,17 @@ class Program
                         Console.SetCursorPosition(oldX, oldY);
                         Console.Write(" ");
 
-                        
+
+                        // fängelse kordinater hörnen
+                        Console.SetCursorPosition(1, 28);
+                        Console.Write("X");
+                        Console.SetCursorPosition(10, 28);
+                        Console.Write("Y");
+                        Console.SetCursorPosition(10, 37);
+                        Console.Write("Z");
+                        Console.SetCursorPosition(1, 37);
+                        Console.Write("V");
+
 
 
                         //skriver ut bokstav med olika färger per person
@@ -261,6 +271,8 @@ class Program
                 Console.WriteLine($"Fångar: {fånge.Name}                                        ");
                 rad++;
             }
+
+
 
 
             //stad.Remove(tjuv);
