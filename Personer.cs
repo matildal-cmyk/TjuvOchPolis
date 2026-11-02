@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,47 +10,67 @@ namespace TjuvOchPolis
         public string Name { get; set; }
         public int PlatsX { get; set; }
         public int PlatsY { get; set; }
-        public ConsoleColor ForegroundColor  { get; set; }
-        public Personer(string name,int platsX,int platsY,ConsoleColor foregroundColor)
+        public int DirectionX { get; set; }
+        public int DirectionY { get; set; }
+
+
+        public Personer(string name, int platsX, int platsY, int directionX, int directionY)
         {
             Name = name;
             PlatsX = platsX;
             PlatsY = platsY;
-            ForegroundColor = foregroundColor;
+            DirectionX = directionX;
+            DirectionY = directionY;
+
+
         }
         public virtual void Move()
         {
+           
 
         }
 
     }
     class Tjuv : Personer
     {
-        public string Stöldgods { get; set; }
-        public Tjuv(string name,int platsX, int platsY, ConsoleColor foregroundColor,string stöldgods):base (name,platsX,platsY,foregroundColor) 
+        //public List<string> Fängelse { get; set; } = new();
+        public List<string> Stöldgods { get; set; } = new();
+        public Tjuv(string name, int platsX, int platsY, int directionX, int directionY) : base(name, platsX, platsY, directionX, directionY)
         {
-            Stöldgods = stöldgods;
+
         }
+        public override void Move()
+        {
+            
+
+        }
+    }
+    class Polis : Personer
+    {
+        public List<string> Beslagtaget { get; set; } = new();
+        public Polis(string name, int platsX, int platsY, int directionX, int directionY) : base(name, platsX, platsY, directionX, directionY)
+        {
+
+        }
+
+    }
+    class Medborgare : Personer
+    {
+        public List<string> Inventory { get; set; } = new();
+        public Medborgare(string name, int platsX, int platsY, int directionX, int directionY) : base(name, platsX, platsY, directionX, directionY)
+        {
+            Inventory.Add("nycklar");
+            Inventory.Add("en mobiltelefon");
+            Inventory.Add("kontanter");
+            Inventory.Add("en klocka");
+        }
+
         public override void Move()
         {
 
         }
-    }
-    class Polis:Personer
-    {
-        public string Beslagtaget { get; set; }
-        public Polis(string name, int platsX,int platsY, ConsoleColor foregroundColor,string beslagtaget) : base(name,platsX,platsY,foregroundColor)
-        {
-            Beslagtaget = beslagtaget;
-        }
+
 
     }
-    class Medborgare:Personer
-    {
-        public string Tillhörigheter { get; set; }
-        public Medborgare(string name, int platsX,int platsY, ConsoleColor foregroundColor,string tillhörigheter) : base(name,platsX,platsY,foregroundColor)
-        {
-            Tillhörigheter = tillhörigheter;
-        }
-    }
 }
+
