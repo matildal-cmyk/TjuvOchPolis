@@ -123,8 +123,14 @@ class Program
 
                             if (tjuv.PlatsX == medborgare.PlatsX && tjuv.PlatsY == medborgare.PlatsY)
                             {
-                                Helper.MedborgareFattighus(medborgare, fattighus);
+                                
                                 Helper.TjuvSno(tjuv, medborgare);
+
+                                if(medborgare.Inventory.Count == 0)
+                                {
+                                    Helper.MedborgareFattighus(medborgare, fattighus);
+                                    medborgareTillFattighus.Add(medborgare);
+                                }
 
                             }
                         }
@@ -201,15 +207,7 @@ class Program
                         //Console.SetCursorPosition(1, 37);
                         //Console.Write("V");
 
-                        // fattighus kordinater
-                        Console.SetCursorPosition(1, 40);
-                        Console.Write("W");
-                        Console.SetCursorPosition(1, 49);
-                        Console.Write("Z");
-                        Console.SetCursorPosition(48, 40);
-                        Console.Write("V");
-                        Console.SetCursorPosition(48, 49);
-                        Console.Write("W");
+
 
 
 
@@ -382,44 +380,54 @@ class Program
 
 
                     //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
-                    int oldXX = fattigmedborgare.PlatsX;
-                    int oldYY = fattigmedborgare.PlatsY;
+                    int oldX = fattigmedborgare.PlatsX;
+                    int oldY = fattigmedborgare.PlatsY;
                     {
 
                         //personer rör sig x+y += baserat på deras random directionX+Y
-                        int DirectionXX = Random.Shared.Next(-1, 2);
-                        int DirectionYY = Random.Shared.Next(-1, 2);
+                        int DirectionX = Random.Shared.Next(-1, 2);
+                        int DirectionY = Random.Shared.Next(-1, 2);
 
-                        fattigmedborgare.DirectionX = DirectionXX;
-                        fattigmedborgare.DirectionY = DirectionYY;
+                        fattigmedborgare.DirectionX = DirectionX;
+                        fattigmedborgare.DirectionY = DirectionY;
 
                         fattigmedborgare.PlatsX += fattigmedborgare.DirectionX;
                         fattigmedborgare.PlatsY += fattigmedborgare.DirectionY;
 
 
+                        Console.SetCursorPosition(1, 40);
+                        Console.Write("Q");
+                        Console.SetCursorPosition(1, 49);
+                        Console.Write("Z");
+                        Console.SetCursorPosition(48, 40);
+                        Console.Write("V");
+                        Console.SetCursorPosition(48, 40);
+                        Console.Write("W");
+
+
                         //// gå igenom väggen, "teleporteras" till andra sidan                    
-                        if (fattigmedborgare.PlatsX < 2)
+                        if (fattigmedborgare.PlatsX < 1)
                         {
-                            fattigmedborgare.PlatsX = 47;
+                            fattigmedborgare.PlatsX = 48;
                         }
-                        else if (fattigmedborgare.PlatsX > 47)
+                        else if (fattigmedborgare.PlatsX > 48)
                         {
-                            fattigmedborgare.PlatsX = 2;
+                            fattigmedborgare.PlatsX = 1;
                         }
 
-                        if (fattigmedborgare.PlatsY < 41)
+                        if (fattigmedborgare.PlatsY < 40)
                         {
-                            fattigmedborgare.PlatsY = 48;
+                            fattigmedborgare.PlatsY = 49;
                         }
-                        else if (fattigmedborgare.PlatsY > 48)
+                        else if (fattigmedborgare.PlatsY > 49)
                         {
-                            fattigmedborgare.PlatsY = 41;
+                            fattigmedborgare.PlatsY = 40;
                         }
 
 
 
                         // byter ut gamla X positionen med blank text, kan skriva . eller , för se vart X har gått
-                        Console.SetCursorPosition(oldXX, oldYY);
+                        Console.SetCursorPosition(oldX, oldY);
                         Console.Write(" ");
 
 
