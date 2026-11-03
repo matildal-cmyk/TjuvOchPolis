@@ -60,9 +60,9 @@ namespace TjuvOchPolis
         public Medborgare(string name, int platsX, int platsY, int directionX, int directionY) : base(name, platsX, platsY, directionX, directionY)
         {
             Inventory.Add("nycklar");
-            //Inventory.Add("en mobiltelefon");
-            //Inventory.Add("kontanter");
-            //Inventory.Add("en klocka");
+            Inventory.Add("en mobiltelefon");
+            Inventory.Add("kontanter");
+            Inventory.Add("en klocka");
         }
 
         public override void Move()
