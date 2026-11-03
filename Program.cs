@@ -40,17 +40,17 @@ class Program
         //
 
         stad.Add(new Tjuv("Karlsson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        stad.Add(new Tjuv("Larsson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        stad.Add(new Tjuv("Svansson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        stad.Add(new Tjuv("Kalle", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        stad.Add(new Tjuv("Karlsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        stad.Add(new Tjuv("Larsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        stad.Add(new Tjuv("Svansson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        stad.Add(new Tjuv("Kalle2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        stad.Add(new Tjuv("Karlsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        stad.Add(new Tjuv("Larsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        stad.Add(new Tjuv("Svansson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        stad.Add(new Tjuv("Kalle2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        //stad.Add(new Tjuv("Larsson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        //stad.Add(new Tjuv("Svansson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        //stad.Add(new Tjuv("Kalle", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        //stad.Add(new Tjuv("Karlsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        //stad.Add(new Tjuv("Larsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        //stad.Add(new Tjuv("Svansson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        //stad.Add(new Tjuv("Kalle2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        //stad.Add(new Tjuv("Karlsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        //stad.Add(new Tjuv("Larsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        //stad.Add(new Tjuv("Svansson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        //stad.Add(new Tjuv("Kalle2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
 
 
 
@@ -120,6 +120,23 @@ class Program
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Hastighet är: {threadSleepSpeed} ms        ");
             Console.ResetColor();
+            Console.SetCursorPosition(200, 3);
+            //Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("Lägg till tjuv: Tryck Tangent ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("[T]       ");
+            Console.ResetColor();
+            Console.SetCursorPosition(200, 4);
+            Console.Write("Lägg till polis: Tryck Tangent ");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("[P]       ");
+            Console.ResetColor();
+            Console.SetCursorPosition(200, 5);
+            Console.Write("Lägg till medborgare: Tryck Tangent ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("[M]       ");
+            Console.ResetColor();
+
             //
 
             // kollar om en key är pressed
@@ -140,6 +157,21 @@ class Program
                     threadSleepSpeed -= 10;
 
 
+                }
+                else if (keyPress.KeyChar == 't')
+                {
+                    // Lägg till tjuv
+                    stad.Add(new Tjuv("Ny tjuv", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+                }
+                else if (keyPress.KeyChar == 'p')
+                {
+                    // Lägg till polis
+                    stad.Add(new Polis("Ny polis", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+                }
+                else if (keyPress.KeyChar == 'm')
+                {
+                    // Lägg till medborgare
+                    stad.Add(new Medborgare("Ny medborgare", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
                 }
             }
 
