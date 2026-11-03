@@ -1,6 +1,7 @@
 ﻿using _10._21.ArrayListTest;
 using System;
 using System.Data;
+using System.Globalization;
 using System.Threading;
 using TjuvOchPolis;
 
@@ -40,17 +41,17 @@ class Program
         //
 
         stad.Add(new Tjuv("Karlsson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        //stad.Add(new Tjuv("Larsson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        //stad.Add(new Tjuv("Svansson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        //stad.Add(new Tjuv("Kalle", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        //stad.Add(new Tjuv("Karlsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        //stad.Add(new Tjuv("Larsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        //stad.Add(new Tjuv("Svansson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        //stad.Add(new Tjuv("Kalle2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        //stad.Add(new Tjuv("Karlsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        //stad.Add(new Tjuv("Larsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        //stad.Add(new Tjuv("Svansson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        //stad.Add(new Tjuv("Kalle2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Larsson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Svansson", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Kalle", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Karlsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Larsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Svansson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Kalle2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Karlsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Larsson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Svansson2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+        stad.Add(new Tjuv("Kalle2", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
 
 
 
@@ -103,6 +104,7 @@ class Program
 
         // sätter hastighet på ThreadSleep
         int threadSleepSpeed = 100;
+        //int prisonTime;
 
         // 
         while (true)
@@ -110,6 +112,8 @@ class Program
             //temporär lista för tjuvar som används för ta bort tjuv från stad lista senare
             List<Tjuv> arresteradTjuv = new();
             List<Medborgare> medborgareTillFattighus = new();
+            List<Tjuv> frigivnaTjuvar = new();
+
 
             // Hastighet för Threadsleep
             Console.SetCursorPosition(200, 1);
@@ -191,7 +195,7 @@ class Program
                             {
 
                                 Helper.TjuvSno(tjuv, medborgare);
-
+                                
                                 if (medborgare.Inventory.Count == 0)
                                 {
                                     Helper.MedborgareFattighus(medborgare, fattighus);
@@ -214,8 +218,11 @@ class Program
 
                             if (polis.PlatsX == tjuv.PlatsX && polis.PlatsY == tjuv.PlatsY)
                             {
+
+
                                 Helper.PolisArrest(tjuv, fängelse, polis);
                                 arresteradTjuv.Add(tjuv);
+
                             }
 
 
@@ -233,11 +240,6 @@ class Program
 
             foreach (Personer person in stad)
             {
-
-
-
-
-
 
                 {
                     //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
@@ -326,8 +328,31 @@ class Program
             }
 
 
-            // skriver ut vilka fångar är i fängelset 
-            int rad = 41;
+
+            // --- start
+
+            foreach (Tjuv fånge in fängelse.prisonPlaces)
+            {
+                if (DateTime.Now >= fånge.freedomTime)
+                {
+                    stad.Add(fånge);
+
+                    frigivnaTjuvar.Add(fånge);
+                }
+            }
+
+            foreach (Tjuv fånge in frigivnaTjuvar)
+            {
+                fängelse.prisonPlaces.Remove(fånge);
+            }
+
+
+            // --- end
+
+
+
+                // skriver ut vilka fångar är i fängelset 
+                int rad = 41;
             foreach (Tjuv fånge in fängelse.prisonPlaces)
             {
                 Console.SetCursorPosition(105, rad);

@@ -33,6 +33,8 @@ namespace TjuvOchPolis
     }
     class Tjuv : Personer
     {
+        public DateTime freedomTime { get; set; }
+
         //public List<string> Fängelse { get; set; } = new();
         public List<string> Stöldgods { get; set; } = new();
         public Tjuv(string name, int platsX, int platsY, int directionX, int directionY) : base(name, platsX, platsY, directionX, directionY)

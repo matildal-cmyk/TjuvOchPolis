@@ -36,28 +36,29 @@ namespace _10._21.ArrayListTest
         }
 
 
-        public static async Task PolisArrest(Tjuv tjuv, Prison prison, Polis polis, Places stad)
+        public static void PolisArrest(Tjuv tjuv, Prison prison, Polis polis)
         {
 
             //ArrayList fängelseList = new ArrayList();
+
+            string allaItems = "";
+            int itemCount = tjuv.Stöldgods.Count;
+            int prisonTime = itemCount * 10000;
             
-
-
 
             //stöldgods loop och lägger till det i lista allaItems så det går att skriva ut allt som blir taget.
             if (tjuv.Stöldgods.Count > 0)
             {
-                string allaItems = "";
-                int itemCount = tjuv.Stöldgods.Count;
-                int prisonTime = itemCount * 4000;
+
                
 
                 for (int i = 0; i < tjuv.Stöldgods.Count; i++)
                 {
                     allaItems += tjuv.Stöldgods[i] + ", ";
+
                 }
 
-                //while loop för ta bort item från tjuvlistan - kanske går att ha i samma loop som ovan men vette fan
+                //while loop för ta bort item från tjuvlistan -kanske går att ha i samma loop som ovan men vette fan
                 while (tjuv.Stöldgods.Count > 0)
                 {
                     string namnBeslagtagetItem = tjuv.Stöldgods[0];
@@ -65,35 +66,28 @@ namespace _10._21.ArrayListTest
                     tjuv.Stöldgods.RemoveAt(0);
 
                     polis.Beslagtaget.Add(namnBeslagtagetItem);
-                    
-                    
+
                 }
 
+
+                tjuv.freedomTime = DateTime.Now.AddMilliseconds(prisonTime);
+
                 prison.prisonPlaces.Add(tjuv);
-                await Task.Delay(prisonTime);
-                stad.Add(tjuv);
 
-
-                //string tjuvTagen = "";
-
-                //for(int i = 0; i > 0; i++)
-                //{
-
-                //}
-
-
-
-                //Console.SetCursorPosition(105, 15);
-                //Console.WriteLine($"Polisen {polis.Name} arresterade {tjuv.Name} och sitter nu i fängelse.                                           ");
 
 
 
 
                 Console.SetCursorPosition(105, 15);
-                Console.WriteLine($"Polisen {polis.Name} beslagtog stöldgods; {allaItems} tjuven {tjuv.Name} blev arresterad.                                           ");
+                Console.WriteLine($"Polisen {polis.Name} beslagtog stöldgods; {allaItems} tjuven {tjuv.Name} blev arresterad i {prisonTime / 1000} sekunder..                                           ");
             }
 
         }
+
+
+ 
+
+
 
 
 
