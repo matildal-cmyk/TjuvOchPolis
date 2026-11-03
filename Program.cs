@@ -398,14 +398,14 @@ class Program
 
 
                 // fängelse kordinater hörnen
-                Console.SetCursorPosition(1, 28);
-                Console.Write("X");
-                Console.SetCursorPosition(10, 28);
-                Console.Write("Y");
-                Console.SetCursorPosition(10, 37);
-                Console.Write("Z");
-                Console.SetCursorPosition(1, 37);
-                Console.Write("V");
+                //Console.SetCursorPosition(1, 28);
+                //Console.Write("X");
+                //Console.SetCursorPosition(10, 28);
+                //Console.Write("Y");
+                //Console.SetCursorPosition(10, 37);
+                //Console.Write("Z");
+                //Console.SetCursorPosition(1, 37);
+                //Console.Write("V");
 
 
 
