@@ -36,7 +36,7 @@ namespace _10._21.ArrayListTest
         }
 
 
-        public static void PolisArrest(Tjuv tjuv, Prison prison, Polis polis)
+        public static async Task PolisArrest(Tjuv tjuv, Prison prison, Polis polis, Places stad)
         {
 
             //ArrayList fängelseList = new ArrayList();
@@ -48,6 +48,9 @@ namespace _10._21.ArrayListTest
             if (tjuv.Stöldgods.Count > 0)
             {
                 string allaItems = "";
+                int itemCount = tjuv.Stöldgods.Count;
+                int prisonTime = itemCount * 4000;
+               
 
                 for (int i = 0; i < tjuv.Stöldgods.Count; i++)
                 {
@@ -67,6 +70,8 @@ namespace _10._21.ArrayListTest
                 }
 
                 prison.prisonPlaces.Add(tjuv);
+                await Task.Delay(prisonTime);
+                stad.Add(tjuv);
 
 
                 //string tjuvTagen = "";
@@ -105,47 +110,6 @@ namespace _10._21.ArrayListTest
 
 
 
-
-
-
-
-
-
-        //public static void PrisonTransfer(Tjuv tjuv, Polis polis, Prison prison)
-        //{
-        //    //stöldgods loop och lägger till det i lista allaItems så det går att skriva ut allt som blir taget.
-        //    if (tjuv.Stöldgods.Count > 0)
-        //    {
-
-
-        //        {
-
-
-
-        //            //for (int i = 0; i < fängelseList.Count; i++)
-        //            //{
-        //            //    string arrayItem = string.Format($"Name is {fängelseList[i]}");
-        //            //    Console.WriteLine(arrayItem);
-        //            //}
-
-
-        //        }
-        //    }
-
-
-
-        //}
-
-        //public static void printFängelselist(Tjuv tjuv, Polis polis, Prison prison)
-        //{
-
-        //    //for (int i = 0; i < prisonPlaces.Count; i++)
-        //    //{
-        //    //    string arrayItem = string.Format($"Name is {fängelseList[i]}");
-        //    //    Console.WriteLine(arrayItem);
-        //    //}
-
-        //}
 
     }
 

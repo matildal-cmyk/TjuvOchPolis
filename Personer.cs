@@ -24,11 +24,11 @@ namespace TjuvOchPolis
 
 
         }
-        public virtual void Move()
-        {
+        //public virtual void Move()
+        //{
            
 
-        }
+        //}
 
     }
     class Tjuv : Personer
@@ -39,11 +39,11 @@ namespace TjuvOchPolis
         {
 
         }
-        public override void Move()
-        {
+        //public override void Move()
+        //{
             
 
-        }
+        //}
     }
     class Polis : Personer
     {
@@ -65,10 +65,10 @@ namespace TjuvOchPolis
             Inventory.Add("en klocka");
         }
 
-        public override void Move()
-        {
+        //public override void Move()
+        //{
 
-        }
+        //}
 
 
     }

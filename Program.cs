@@ -96,7 +96,7 @@ class Program
         Console.SetCursorPosition(105, 14);
         Console.WriteLine("---POLISFEED---");
         Console.SetCursorPosition(105, 40);
-        Console.WriteLine("---FÅNGEFEED---");
+        Console.WriteLine("---FÄNGELSE---");
         Console.SetCursorPosition(105, 60);
         Console.WriteLine("---FATTIGHUS---");
 
@@ -175,7 +175,7 @@ class Program
                 }
             }
 
-            //Console.WriteLine($"Speed is: {threadSleepSpeed} ms");
+     
 
             //loop för kolla x+y position sno/arrestera
             foreach (var personTjuv in stad)
@@ -331,7 +331,7 @@ class Program
             foreach (Tjuv fånge in fängelse.prisonPlaces)
             {
                 Console.SetCursorPosition(105, rad);
-                Console.WriteLine($"{fånge.Name}                                        ");
+                Console.WriteLine($"{fånge.Name} är nu i fängelset                    ");
                 rad++;
 
 
@@ -420,7 +420,7 @@ class Program
             foreach (Medborgare fattigmedborgare in fattighus.fattighusPlaces)
             {
                 Console.SetCursorPosition(105, rad3);
-                Console.WriteLine($"{fattigmedborgare.Name}                                        ");
+                Console.WriteLine($"{fattigmedborgare.Name} hamnar i fattighuset                    ");
                 rad3++;
 
                 //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
@@ -439,14 +439,14 @@ class Program
                 fattigmedborgare.PlatsY += fattigmedborgare.DirectionY;
 
 
-                Console.SetCursorPosition(1, 40);
-                Console.Write("Q");
-                Console.SetCursorPosition(1, 49);
-                Console.Write("Z");
-                Console.SetCursorPosition(48, 40);
-                Console.Write("V");
-                Console.SetCursorPosition(48, 40);
-                Console.Write("W");
+                //Console.SetCursorPosition(1, 40);
+                //Console.Write("Q");
+                //Console.SetCursorPosition(1, 49);
+                //Console.Write("Z");
+                //Console.SetCursorPosition(48, 40);
+                //Console.Write("V");
+                //Console.SetCursorPosition(48, 40);
+                //Console.Write("W");
 
 
                 //// gå igenom väggen, "teleporteras" till andra sidan                    
@@ -504,25 +504,7 @@ class Program
 
                 }
 
-                //delay mellan rörelse
-
-                //Helper.MedborgareFattighus(medborgare, fattighus);
-
-
-                //foreach(var )
-                //Console.SetCursorPosition(105, rad2);
-                //Console.WriteLine($"{medborgare.Name}                                        ");
-                //rad2++;
-
-
-
-
-
-
-
-
-
-
+               
 
             }
             Thread.Sleep(threadSleepSpeed);
