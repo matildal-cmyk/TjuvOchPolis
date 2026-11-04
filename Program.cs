@@ -179,13 +179,22 @@ class Program
                 }
             }
 
-     
+
+            
+
+
+
 
             //loop för kolla x+y position sno/arrestera
             foreach (var personTjuv in stad)
             {
+                
+
                 if (personTjuv is Tjuv tjuv)
                 {
+                    
+                   
+
                     foreach (var personMedborgare in stad)
                     {
                         if (personMedborgare is Medborgare medborgare)
@@ -205,6 +214,7 @@ class Program
                             }
                         }
                     }
+                   
                 }
             }
             foreach (var personPolis in stad)
@@ -234,12 +244,18 @@ class Program
 
 
 
-
-
-
-
+            //int antalTjuvar = 0;
+          
             foreach (Personer person in stad)
             {
+                //if (person is Tjuv)
+                //{
+                //    antalTjuvar++;
+                                       
+                //}
+                //Console.SetCursorPosition(105, 20);
+                //Console.WriteLine($"Antal tjuvar: {antalTjuvar}");
+
 
                 {
                     //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
@@ -422,6 +438,19 @@ class Program
 
 
             }
+            //Utskrift status
+            int polisCount = stad.OfType<Polis>().Count();
+            Console.SetCursorPosition(105, 4);
+            Console.WriteLine($"I staden är det {polisCount} antal poliser");
+            
+            int tjuvCount = stad.OfType<Tjuv>().Count();
+            Console.SetCursorPosition(105, 5);
+            Console.WriteLine($"I staden är det {tjuvCount} antal tjuvar");
+
+            int medborgarCount = stad.OfType<Medborgare>().Count();
+            Console.SetCursorPosition(105,6);
+            Console.WriteLine($"I staden är det {medborgarCount} antal medborgare");
+
 
 
 
@@ -525,7 +554,7 @@ class Program
 
                 }
 
-               
+                
 
             }
             Thread.Sleep(threadSleepSpeed);
