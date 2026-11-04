@@ -111,13 +111,12 @@ class Program
         // 
         while (true)
         {
-            //temporär lista för tjuvar som används för ta bort tjuv från stad lista senare
+            //temporär lista inom loop
             List<Tjuv> arresteradTjuv = new();
             List<Medborgare> medborgareTillFattighus = new();
             List<Tjuv> frigivnaTjuvar = new();
 
 
-            // Hastighet för Threadsleep
             
             Console.SetCursorPosition(105,8);
             Console.ForegroundColor = ConsoleColor.Yellow;
