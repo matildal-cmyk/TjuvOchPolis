@@ -100,6 +100,9 @@ class Program
         Console.SetCursorPosition(105, 1);
         Console.WriteLine("STATUS:");
 
+        bool visaInfo = false;
+        int rad4 = 105;
+        int rad5 = 20;
 
         // sätter hastighet på ThreadSleep
         int threadSleepSpeed = 100;
@@ -116,26 +119,26 @@ class Program
 
             // Hastighet för Threadsleep
             
-            Console.SetCursorPosition(105,14);
+            Console.SetCursorPosition(105,8);
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Ändra hastighet: Tryck Tangent [1] för +10 ms, [2] för -10 ms       ");
-            Console.SetCursorPosition(105, 15);
+            Console.SetCursorPosition(105, 9);
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Hastighet är: {threadSleepSpeed} ms        ");
             Console.ResetColor();
-            Console.SetCursorPosition(105, 16);
+            Console.SetCursorPosition(105, 12);
             //Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("Lägg till tjuv: Tryck Tangent ");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("[T]       ");
             Console.ResetColor();
-            Console.SetCursorPosition(105, 17);
+            Console.SetCursorPosition(105, 13);
             Console.Write("Lägg till polis: Tryck Tangent ");
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("[P]       ");
             Console.ResetColor();
-            Console.SetCursorPosition(105, 18);
+            Console.SetCursorPosition(105, 14);
             Console.Write("Lägg till medborgare: Tryck Tangent ");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("[M]       ");
@@ -171,31 +174,48 @@ class Program
                 {
                     // Lägg till tjuv
                     stad.Add(new Tjuv("Ny tjuv", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-                    Console.SetCursorPosition(105, 19);
-                    Console.WriteLine("Ny tjuv tillagd...     ");
+                    Console.SetCursorPosition(105, 17);
+                    Console.WriteLine("Ny tjuv tillagd...                 ");
                     
                 }
                 else if (keyPress.KeyChar == 'p')
                 {
                     // Lägg till polis
                     stad.Add(new Polis("Ny polis", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-                    Console.SetCursorPosition(105, 19);
-                    Console.WriteLine("Ny polis tillagd...      ");
+                    Console.SetCursorPosition(105, 17);
+                    Console.WriteLine("Ny polis tillagd...               ");
                     
                 }
                 else if (keyPress.KeyChar == 'm')
                 {
                     // Lägg till medborgare
                     stad.Add(new Medborgare("Ny medborgare", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-                    Console.SetCursorPosition(105, 19);
-                    Console.WriteLine("Ny medborgare tillagd...    "); 
+                    Console.SetCursorPosition(105, 17);
+                    Console.WriteLine("Ny medborgare tillagd...            "); 
                     
                 }
-               
+
+                // visa debug mode
+                else if (keyPress.KeyChar == '3')
+                {
+                    visaInfo = true;                   
+                    
+                }
+                // gömmer debug
+                else if (keyPress.KeyChar == '4')
+                {
+                    visaInfo = false;
+                }
+
+
             }
 
 
-            
+
+
+
+
+
 
 
 
@@ -259,45 +279,81 @@ class Program
                 }
             }
 
+            
+
+           
+            int rad6 = 20;
+            
+            //debug loop
+            foreach(Personer person in stad)
+            {
+                if (rad6 >= 80)
+                {
+                    break;
+                }
+
+                Console.SetCursorPosition(105, rad6);
+
+                if (visaInfo == true)
+                {
+                    Console.WriteLine(person.GetType().Name + " " + person.Name + ". Rör sig i riktning :" + person.DirectionX + "," + person.DirectionY + ". Koordinater X: " + person.PlatsX + ", och Y: " + person.PlatsY);
+                }
+                else
+                {
+                    Console.WriteLine("                                                                                      ");
+                }
+
+                rad6++;
+            }
 
 
-            //int antalTjuvar = 0;
-            int rad4 = 105;
-            int rad5 = 20;
 
+
+
+
+            //riktiga loop
             foreach (Personer person in stad)
             {
 
+
+                                                                                            
+
+
+                //Console.SetCursorPosition(155, 55);
+                //Console.WriteLine(".                                                                                                                                                 .");
+
+
+                //Console.SetCursorPosition(105, rad5);
                 // kollar om en key är pressed
-                if (Console.KeyAvailable)
-                {
+                //if (Console.KeyAvailable)
+                //{
 
 
-                    ConsoleKeyInfo keyPress = Console.ReadKey(true);
+                //ConsoleKeyInfo keyPress = Console.ReadKey(true);
 
-                    //om keypress är 1 = +10 ms på threadsleep
-                    if (keyPress.KeyChar == '3')
+                ////om keypress är 1 = +10 ms på threadsleep
+                //if (keyPress.KeyChar == '3')
 
-                    {
-                        Console.SetCursorPosition(rad4, rad5);
-                        Console.WriteLine(person.GetType().Name + ", heter " + person.Name + " och rör sig riktning : " + person.DirectionX + "," + person.DirectionY + ". Har kordinater X: " + person.PlatsX + ", och Y: " + person.PlatsY);
-                        rad5++;
+                //{
+                //    Console.SetCursorPosition(rad4, rad5);
+                //    Console.WriteLine(person.GetType().Name + ", heter " + person.Name + " och rör sig riktning : " + person.DirectionX + "," + person.DirectionY + ". Har kordinater X: " + person.PlatsX + ", och Y: " + person.PlatsY);
+                //    rad5++;
 
-                    }
-                    else if (keyPress.KeyChar == '4') // knapp2 blir -10 ms med failsafe(crashar vid threadsleep 0 och under)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Black;
-                        Console.SetCursorPosition(rad4, rad5);
-                        Console.WriteLine(person.GetType().Name + ", heter " + person.Name + " och rör sig riktning : " + person.DirectionX + "," + person.DirectionY + ". Har kordinater X: " + person.PlatsX + ", och Y: " + person.PlatsY + "                     ");
-                        
-                        rad5++;
-                        Console.ResetColor();
+                //}
+                //else if (keyPress.KeyChar == '4') // knapp2 blir -10 ms med failsafe(crashar vid threadsleep 0 och under)
+                //{
+                //    Console.ForegroundColor = ConsoleColor.Black;
+                //    Console.SetCursorPosition(rad4, rad5);
+                //    Console.WriteLine(person.GetType().Name + ", heter " + person.Name + " och rör sig riktning : " + person.DirectionX + "," + person.DirectionY + ". Har kordinater X: " + person.PlatsX + ", och Y: " + person.PlatsY + "                     ");
+
+                //    rad5++;
+                //    Console.ResetColor();
 
 
-                    }
-                }
+                //}
+                //}
 
-                
+
 
 
 
@@ -494,15 +550,15 @@ class Program
             //Utskrift status
             int polisCount = stad.OfType<Polis>().Count();
             Console.SetCursorPosition(105, 4);
-            Console.WriteLine($"I staden är det {polisCount} antal poliser");
+            Console.WriteLine($"I staden är det {polisCount} antal poliser      ");
             
             int tjuvCount = stad.OfType<Tjuv>().Count();
             Console.SetCursorPosition(105, 5);
-            Console.WriteLine($"I staden är det {tjuvCount} antal tjuvar");
+            Console.WriteLine($"I staden är det {tjuvCount} antal tjuvar      ");
 
             int medborgarCount = stad.OfType<Medborgare>().Count();
             Console.SetCursorPosition(105,6);
-            Console.WriteLine($"I staden är det {medborgarCount} antal medborgare");
+            Console.WriteLine($"I staden är det {medborgarCount} antal medborgare     ");
 
 
 
