@@ -60,7 +60,7 @@ class Program
 
 
         // intro
-
+        Console.WriteLine("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         Console.ForegroundColor = ConsoleColor.Blue;
         Console.Write("Gör fullscreen och ctrl-scroll down för kontrollera zoom. ");
         Console.ForegroundColor = ConsoleColor.Green;
@@ -87,19 +87,18 @@ class Program
         Console.CursorVisible = false;
         //Console.Clear();
 
-        int textradSida = 105;
+        //int textradSida = 105;
         //int textradKolumn = 25;
 
-        int rad2 = 61;
+        //int rad2 = 61;
 
-        Console.SetCursorPosition(textradSida, 1);
+        Console.SetCursorPosition(1, 51);
         Console.WriteLine("---TJUVFEED---");
-        Console.SetCursorPosition(105, 14);
+        //Console.SetCursorPosition(105, 14);
+        Console.SetCursorPosition(1, 54);
         Console.WriteLine("---POLISFEED---");
-        Console.SetCursorPosition(105, 40);
-        Console.WriteLine("---FÄNGELSE---");
-        Console.SetCursorPosition(105, 60);
-        Console.WriteLine("---FATTIGHUS---");
+        Console.SetCursorPosition(105, 1);
+        Console.WriteLine("STATUS:");
 
 
         // sätter hastighet på ThreadSleep
@@ -116,26 +115,27 @@ class Program
 
 
             // Hastighet för Threadsleep
-            Console.SetCursorPosition(200, 1);
+            
+            Console.SetCursorPosition(105,14);
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Ändra hastighet: Tryck Tangent [1] för +10 ms, [2] för -10 ms       ");
-            Console.SetCursorPosition(200, 2);
+            Console.SetCursorPosition(105, 15);
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Hastighet är: {threadSleepSpeed} ms        ");
             Console.ResetColor();
-            Console.SetCursorPosition(200, 3);
+            Console.SetCursorPosition(105, 16);
             //Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("Lägg till tjuv: Tryck Tangent ");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("[T]       ");
             Console.ResetColor();
-            Console.SetCursorPosition(200, 4);
+            Console.SetCursorPosition(105, 17);
             Console.Write("Lägg till polis: Tryck Tangent ");
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("[P]       ");
             Console.ResetColor();
-            Console.SetCursorPosition(200, 5);
+            Console.SetCursorPosition(105, 18);
             Console.Write("Lägg till medborgare: Tryck Tangent ");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("[M]       ");
@@ -348,23 +348,14 @@ class Program
 
 
             // --- end
+            //Utskrift status
+            Console.SetCursorPosition(105, 2);
+            Console.WriteLine($"{fängelse.prisonPlaces.Count} fångar i fängelset");
 
-
-
-                // skriver ut vilka fångar är i fängelset 
-                int rad = 41;
+            //Fängelseloop för att fångar ska röra sig i fängelset
             foreach (Tjuv fånge in fängelse.prisonPlaces)
             {
-                Console.SetCursorPosition(105, rad);
-                Console.WriteLine($"{fånge.Name} är nu i fängelset                    ");
-                rad++;
-
-
-
-
-
-
-
+                
 
 
                 //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
@@ -440,13 +431,18 @@ class Program
                 stad.Remove(medborgare);
             }
 
-            int rad3 = 61;
+            //int rad3 = 61;
+
+            //Utskrift status
+            Console.SetCursorPosition(105, 3);
+            Console.WriteLine($"{fattighus.fattighusPlaces.Count} medborgare i fattighuset");
+
 
             foreach (Medborgare fattigmedborgare in fattighus.fattighusPlaces)
             {
-                Console.SetCursorPosition(105, rad3);
-                Console.WriteLine($"{fattigmedborgare.Name} hamnar i fattighuset                    ");
-                rad3++;
+                //Console.SetCursorPosition(105, rad3);
+                //Console.WriteLine($"{fattigmedborgare.Name} hamnar i fattighuset                    ");
+                //rad3++;
 
                 //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
                 int oldX = fattigmedborgare.PlatsX;
