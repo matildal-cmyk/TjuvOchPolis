@@ -79,7 +79,7 @@ namespace _10._21.ArrayListTest
 
 
                 Console.SetCursorPosition(1,55);
-                Console.WriteLine($"Polisen {polis.Name} arresterade tjuven {tjuv.Name}                           \n Beslagtaget gods: {allaItems}                             \n {tjuv.Name} blev arresterad i {prisonTime / 1000} sekunder..                                         ");
+                Console.WriteLine($"Polisen {polis.Name} arresterade tjuven {tjuv.Name}                                 \n Beslagtaget gods: {allaItems}                                       \n {tjuv.Name} blev arresterad i {prisonTime / 1000} sekunder..                                             ");
             }
 
         }
