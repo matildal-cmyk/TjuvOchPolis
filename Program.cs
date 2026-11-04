@@ -146,6 +146,7 @@ class Program
             // kollar om en key är pressed
             if (Console.KeyAvailable)
             {
+                
 
                 ConsoleKeyInfo keyPress = Console.ReadKey(true);
 
@@ -166,17 +167,27 @@ class Program
                 {
                     // Lägg till tjuv
                     stad.Add(new Tjuv("Ny tjuv", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+                    Console.SetCursorPosition(105, 19);
+                    Console.WriteLine("Ny tjuv tillagd...");
+                    
                 }
                 else if (keyPress.KeyChar == 'p')
                 {
                     // Lägg till polis
                     stad.Add(new Polis("Ny polis", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+                    Console.SetCursorPosition(105, 19);
+                    Console.WriteLine("Ny polis tillagd...");
+                    
                 }
                 else if (keyPress.KeyChar == 'm')
                 {
                     // Lägg till medborgare
                     stad.Add(new Medborgare("Ny medborgare", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
+                    Console.SetCursorPosition(105, 19);
+                    Console.WriteLine("Ny medborgare tillagd...");
+                    
                 }
+               
             }
 
 
