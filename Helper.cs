@@ -108,18 +108,7 @@ namespace _10._21.ArrayListTest
 
 
 
-        // fängelse kordinater hörnen
-        //Console.SetCursorPosition(1, 28);
-        //Console.Write("X");
-        //Console.SetCursorPosition(10, 28);
-        //Console.Write("Y");
-        //Console.SetCursorPosition(10, 37);
-        //Console.Write("Z");
-        //Console.SetCursorPosition(1, 37);
-        //Console.Write("V");
-
-
-
+        //Fattighus kordinater hörnen
         //Console.SetCursorPosition(1, 40);
         //Console.Write("Q");
         //Console.SetCursorPosition(1, 49);
