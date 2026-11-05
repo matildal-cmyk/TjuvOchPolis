@@ -331,10 +331,23 @@ class Program
 
 
                         //// gå igenom väggen, "teleporteras" till andra sidan                    
-                        if (person.PlatsX < 1) person.PlatsX = 96;
-                        else if (person.PlatsX > 96) person.PlatsX = 1;
-                        if (person.PlatsY < 1) person.PlatsY = 25;
-                        else if (person.PlatsY > 25) person.PlatsY = 1;
+                        if (person.PlatsX < 1)
+                        {
+                            person.PlatsX = 96;
+                        }
+                        else if (person.PlatsX > 96)
+                        {
+                            person.PlatsX = 1;
+                        }
+
+                        if (person.PlatsY < 1)
+                        {
+                            person.PlatsY = 25;
+                        }
+                        else if (person.PlatsY > 25)
+                        {
+                            person.PlatsY = 1;
+                        }
 
 
 
@@ -434,12 +447,24 @@ class Program
                 fånge.PlatsY += fånge.DirectionY;
 
 
-                //// gå igenom väggen, "teleporteras" till andra sidan                    
-                if (fånge.PlatsX < 1) fånge.PlatsX = 10;
-                else if (fånge.PlatsX > 10) fånge.PlatsX = 1;
+                // gå igenom väggen, "teleporteras" till andra sidan                    
+                if (fånge.PlatsX < 1)
+                {
+                    fånge.PlatsX = 10;
+                }
+                else if (fånge.PlatsX > 10)
+                {
+                    fånge.PlatsX = 1;
+                }
 
-                if (fånge.PlatsY < 28) fånge.PlatsY = 37;
-                else if (fånge.PlatsY > 37) fånge.PlatsY = 28;
+                if (fånge.PlatsY < 28)
+                {
+                    fånge.PlatsY = 37;
+                }
+                else if (fånge.PlatsY > 37)
+                {
+                    fånge.PlatsY = 28;
+                }
 
 
                 // byter ut gamla X positionen med blank text, kan skriva . eller , för se vart X har gått
@@ -503,7 +528,7 @@ class Program
                 fattigmedborgare.PlatsY += fattigmedborgare.DirectionY;
 
 
-                //// gå igenom väggen, "teleporteras" till andra sidan                    
+                // gå igenom väggen, "teleporteras" till andra sidan                    
                 if (fattigmedborgare.PlatsX < 1)
                 {
                     fattigmedborgare.PlatsX = 48;
