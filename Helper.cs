@@ -19,13 +19,13 @@ namespace _10._21.ArrayListTest
                 int snoRandomItem = Random.Shared.Next(medborgare.Inventory.Count);
                 string itemAttSno = medborgare.Inventory[snoRandomItem];
 
-                //ta bort det slumpmässiga itemet+ger det till tjuven
+                // ta bort det slumpmässiga itemet+ger det till tjuven
                 medborgare.Inventory.RemoveAt(snoRandomItem);
                 tjuv.Stöldgods.Add(itemAttSno);
                 
 
 
-                //skriver ut
+                // skriver ut
                 Console.SetCursorPosition(15, 28);
                 Console.Write($"Tjuven {tjuv.Name} rånade {medborgare.Name} på {itemAttSno}.                                          ");
                 //Thread.Sleep(2000);
@@ -41,12 +41,13 @@ namespace _10._21.ArrayListTest
 
             //ArrayList fängelseList = new ArrayList();
 
+            // tom sträng allaItems lista som [i]++ per stöldgods från tjuv
             string allaItems = "";
             int itemCount = tjuv.Stöldgods.Count;
             int prisonTime = itemCount * 10000;
             
 
-            //stöldgods loop och lägger till det i lista allaItems så det går att skriva ut allt som blir taget.
+            // stöldgods loop och lägger till det i lista allaItems så det går att skriva ut allt som blir taget.
             if (tjuv.Stöldgods.Count > 0)
             {
 
@@ -58,7 +59,7 @@ namespace _10._21.ArrayListTest
 
                 }
 
-                //while loop för ta bort item från tjuvlistan -kanske går att ha i samma loop som ovan men vette fan
+                // while loop för ta bort item från tjuvlistan -kanske går att ha i samma loop som ovan men vette fan
                 while (tjuv.Stöldgods.Count > 0)
                 {
                     string namnBeslagtagetItem = tjuv.Stöldgods[0];
@@ -79,9 +80,9 @@ namespace _10._21.ArrayListTest
 
                 
                 Console.SetCursorPosition(1,52);
-                //Console.WriteLine($"Polisen {polis.Name} arresterade tjuven {tjuv.Name}                                 \n Beslagtaget gods: {allaItems}                                       \n {tjuv.Name} blev arresterad i {prisonTime / 1000} sekunder..                                             ");
+                // Console.WriteLine($"Polisen {polis.Name} arresterade tjuven {tjuv.Name}                                 \n Beslagtaget gods: {allaItems}                                       \n {tjuv.Name} blev arresterad i {prisonTime / 1000} sekunder..                                             ");
                 Console.WriteLine($"Polisen {polis.Name} arresterade tjuven {tjuv.Name} och sitter {prisonTime / 1000}s i fängelse.                                  \n Beslagtaget gods: {allaItems}                                                      ");
-               // Thread.Sleep(2000);
+               //Thread.Sleep(2000);
             }
 
         }

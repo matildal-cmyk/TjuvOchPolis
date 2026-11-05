@@ -87,14 +87,14 @@ class Program
         fängelse.Build();
 
 
-        Fattighus fattighus = new Fattighus(40, new int[10, 48], 50); //för att det ska bli jämnt
+        Fattighus fattighus = new Fattighus(40, new int[10, 48], 50); // för att det ska bli jämnt
         fattighus.Build();
 
 
 
         // disable muspekarn
         Console.CursorVisible = false;
-        //Console.Clear();
+        // Console.Clear();
         
         Console.SetCursorPosition(15, 27);
         Console.WriteLine("---TJUVFEED---");
@@ -114,13 +114,13 @@ class Program
         // start på hela loop
         while (true)
         {
-            //temporär lista inom loop
+            // temporär lista inom loop
             List<Tjuv> arresteradTjuv = new();
             List<Medborgare> medborgareTillFattighus = new();
             List<Tjuv> frigivnaTjuvar = new();
 
 
-            //Info lägga till tjuv/polis/medborgare och ändra hastighet, 
+            // Info lägga till tjuv/polis/medborgare och ändra hastighet, 
             Console.SetCursorPosition(105,8);
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Ändra hastighet: Tryck Tangent [1] för +10 ms, [2] för -10 ms       ");
@@ -158,7 +158,7 @@ class Program
 
                 ConsoleKeyInfo keyPress = Console.ReadKey(true);
 
-                //om keypress är 1 = +10 ms på threadsleep
+                // om keypress är 1 = +10 ms på threadsleep
                 if (keyPress.KeyChar == '1')
 
                 {
@@ -254,7 +254,7 @@ class Program
                 }
             }
 
-            //  kollar tjuv+polis koordinater för sno item via helper metod
+            // kollar tjuv+polis koordinater för sno item via helper metod
             foreach (var personPolis in stad)
             {
                 if (personPolis is Polis polis)
@@ -288,7 +288,7 @@ class Program
            
             int rad6 = 20;
             
-            //debug loop
+            // debug loop
             foreach(Personer person in stad)
             {
                 if (rad6 >= 52)
@@ -315,22 +315,22 @@ class Program
 
 
 
-            //riktiga loop
+            // riktiga loop
             foreach (Personer person in stad)
             {
 
                 {
-                    //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
+                    // recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
                     int oldX = person.PlatsX;
                     int oldY = person.PlatsY;
                     {
 
-                        //personer rör sig x+y += baserat på deras random directionX+Y
+                        // personer rör sig x+y += baserat på deras random directionX+Y
                         person.PlatsX += person.DirectionX;
                         person.PlatsY += person.DirectionY;
 
 
-                        //// gå igenom väggen, "teleporteras" till andra sidan                    
+                        // gå igenom väggen, "teleporteras" till andra sidan                    
                         if (person.PlatsX < 1)
                         {
                             person.PlatsX = 96;
@@ -357,7 +357,7 @@ class Program
 
                                                
 
-                        //skriver ut bokstav med olika färger per person
+                        // skriver ut bokstav med olika färger per person
                         if (person is Tjuv)
 
                         {
@@ -407,7 +407,7 @@ class Program
 
 
 
-            // --- loop för hur länge tjuvar ska sitta i fängelset och frigivna tjuvar ska tillbaka till staden
+            // loop för hur länge tjuvar ska sitta i fängelset och frigivna tjuvar ska tillbaka till staden
 
             foreach (Tjuv fånge in fängelse.prisonPlaces)
             {
@@ -419,24 +419,25 @@ class Program
                 }
             }
 
+            // tar bort fånge från prisonPlaces
             foreach (Tjuv fånge in frigivnaTjuvar)
             {
                 fängelse.prisonPlaces.Remove(fånge);
             }
 
-            //Utskrift status
+            // Utskrift status
             Console.SetCursorPosition(105, 2);
             Console.WriteLine($"{fängelse.prisonPlaces.Count} fångar i fängelset");
 
-            //Fängelseloop för att fångar ska röra sig i fängelset
+            // Fängelseloop för att fångar ska röra sig i fängelset
             foreach (Tjuv fånge in fängelse.prisonPlaces)
             {
-                 //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
+                 // recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
                 int oldX = fånge.PlatsX;
                 int oldY = fånge.PlatsY;
 
 
-                //personer rör sig x+y += baserat på deras random directionX+Y
+                // personer rör sig x+y += baserat på deras random directionX+Y
                 int DirectionX = Random.Shared.Next(-1, 2);
                 int DirectionY = Random.Shared.Next(-1, 2);
 
@@ -472,7 +473,7 @@ class Program
                 Console.Write(" ");
 
 
-                //skriver ut bokstav med olika färger per person
+                // skriver ut bokstav med olika färger per person
                 if (fånge is Tjuv)
 
                 {
@@ -485,7 +486,7 @@ class Program
                 }
 
             }
-            //Utskrift status
+            // Utskrift status
             int polisCount = stad.OfType<Polis>().Count();
             Console.SetCursorPosition(105, 4);
             Console.WriteLine($"I staden är det {polisCount} antal poliser      ");
@@ -503,21 +504,21 @@ class Program
                 stad.Remove(medborgare);
             }
 
-            //int rad3 = 61;
+            // int rad3 = 61;
 
-            //Utskrift status
+            // Utskrift status
             Console.SetCursorPosition(105, 3);
             Console.WriteLine($"{fattighus.fattighusPlaces.Count} medborgare i fattighuset");
 
 
             foreach (Medborgare fattigmedborgare in fattighus.fattighusPlaces)
             {
-                //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
+                // recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
                 int oldX = fattigmedborgare.PlatsX;
                 int oldY = fattigmedborgare.PlatsY;
 
 
-                //personer rör sig x+y += baserat på deras random directionX+Y
+                // personer rör sig x+y += baserat på deras random directionX+Y
                 int DirectionX = Random.Shared.Next(-1, 2);
                 int DirectionY = Random.Shared.Next(-1, 2);
 
@@ -552,7 +553,7 @@ class Program
                 Console.Write(" ");
 
 
-                //skriver ut bokstav med olika färger per person
+                // skriver ut bokstav med olika färger per person
                 if (fattigmedborgare is Medborgare)
 
                 {
