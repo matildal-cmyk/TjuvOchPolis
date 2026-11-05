@@ -285,7 +285,7 @@ class Program
             //debug loop
             foreach(Personer person in stad)
             {
-                if (rad6 >= 120)
+                if (rad6 >= 52)
                 {
                     break;
                 }

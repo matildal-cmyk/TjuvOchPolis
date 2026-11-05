@@ -28,7 +28,7 @@ namespace _10._21.ArrayListTest
                 //skriver ut
                 Console.SetCursorPosition(15, 28);
                 Console.Write($"Tjuven {tjuv.Name} rånade {medborgare.Name} på {itemAttSno}.                                          ");
-                
+                //Thread.Sleep(2000);
             }
 
 
@@ -81,6 +81,7 @@ namespace _10._21.ArrayListTest
                 Console.SetCursorPosition(1,52);
                 //Console.WriteLine($"Polisen {polis.Name} arresterade tjuven {tjuv.Name}                                 \n Beslagtaget gods: {allaItems}                                       \n {tjuv.Name} blev arresterad i {prisonTime / 1000} sekunder..                                             ");
                 Console.WriteLine($"Polisen {polis.Name} arresterade tjuven {tjuv.Name} och sitter {prisonTime / 1000}s i fängelse.                                  \n Beslagtaget gods: {allaItems}                                                      ");
+               // Thread.Sleep(2000);
             }
 
         }
