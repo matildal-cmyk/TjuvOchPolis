@@ -12,8 +12,8 @@ namespace _10._21.ArrayListTest
 
         public static void TjuvSno(Tjuv tjuv, Medborgare medborgare)
         {
-            // Kollar medborgare inventory count mer än 0 
-            if (medborgare.Inventory.Count > 0)
+            // Kollar medborgare inventory count mer än 0 + tjuv mindre än 4(slippa print+utsuddning fel)
+            if (medborgare.Inventory.Count > 0 && tjuv.Stöldgods.Count < 5)
             {
                 // snor random item från (0, inventory count) och ger det string namn
                 int snoRandomItem = Random.Shared.Next(medborgare.Inventory.Count);
@@ -81,7 +81,8 @@ namespace _10._21.ArrayListTest
                 
                 Console.SetCursorPosition(1,52);
                 // Console.WriteLine($"Polisen {polis.Name} arresterade tjuven {tjuv.Name}                                 \n Beslagtaget gods: {allaItems}                                       \n {tjuv.Name} blev arresterad i {prisonTime / 1000} sekunder..                                             ");
-                Console.WriteLine($"Polisen {polis.Name} arresterade tjuven {tjuv.Name} och sitter {prisonTime / 1000}s i fängelse.                                  \n Beslagtaget gods: {allaItems}                                                      ");
+                Console.WriteLine($"Polisen {polis.Name} arresterade tjuven {tjuv.Name} som sitter {prisonTime / 1000}s i fängelse.                 \n Beslagtaget gods:     " +
+                    $"\n {allaItems}                                                             ");
                //Thread.Sleep(2000);
             }
 
