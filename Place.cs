@@ -48,11 +48,11 @@ namespace TjuvOchPolis
         {
             public List<Medborgare> fattighusPlaces { get; set; } = new();
 
-            public Fattighus(int roof, int[,] middle, int floor) : base(roof, middle, floor)
-            {
+        public Fattighus(int roof, int[,] middle, int floor) : base(roof, middle, floor)
+        {
 
-            }
-            public override void Build()
+        }
+        public override void Build()
             {
                 Console.Write("-FATTIGHUS");
                 for (int i = 0; i < Roof; i++)

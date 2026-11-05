@@ -86,12 +86,7 @@ class Program
         // disable muspekarn
         Console.CursorVisible = false;
         //Console.Clear();
-
-        //int textradSida = 105;
-        //int textradKolumn = 25;
-
-        //int rad2 = 61;
-
+        
         Console.SetCursorPosition(15, 27);
         Console.WriteLine("---TJUVFEED---");
         Console.SetCursorPosition(1, 51);
@@ -102,12 +97,12 @@ class Program
         bool visaInfo = false;
         int rad4 = 105;
         int rad5 = 20;
+        //int rad2 = 61;
 
         // sätter hastighet på ThreadSleep
         int threadSleepSpeed = 100;
-        //int prisonTime;
 
-        // 
+        // start på hela loop
         while (true)
         {
             //temporär lista inom loop
@@ -116,7 +111,7 @@ class Program
             List<Tjuv> frigivnaTjuvar = new();
 
 
-            
+            //Info lägga till tjuv/polis/medborgare och ändra hastighet, 
             Console.SetCursorPosition(105,8);
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Ändra hastighet: Tryck Tangent [1] för +10 ms, [2] för -10 ms       ");
@@ -126,7 +121,6 @@ class Program
             Console.WriteLine($"Hastighet är: {threadSleepSpeed} ms        ");
             Console.ResetColor();
             Console.SetCursorPosition(105, 12);
-            //Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("Lägg till tjuv: Tryck Tangent ");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("[T]       ");
@@ -141,9 +135,9 @@ class Program
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("[M]       ");
             Console.ResetColor();
-
+            Console.SetCursorPosition(105, 15);
+            Console.WriteLine("Tryck [3] eller [4] för att visa/dölja debuglogg");
            
-
             //
 
 
@@ -313,57 +307,6 @@ class Program
             foreach (Personer person in stad)
             {
 
-
-                                                                                            
-
-
-                //Console.SetCursorPosition(155, 55);
-                //Console.WriteLine(".                                                                                                                                                 .");
-
-
-                //Console.SetCursorPosition(105, rad5);
-                // kollar om en key är pressed
-                //if (Console.KeyAvailable)
-                //{
-
-
-                //ConsoleKeyInfo keyPress = Console.ReadKey(true);
-
-                ////om keypress är 1 = +10 ms på threadsleep
-                //if (keyPress.KeyChar == '3')
-
-                //{
-                //    Console.SetCursorPosition(rad4, rad5);
-                //    Console.WriteLine(person.GetType().Name + ", heter " + person.Name + " och rör sig riktning : " + person.DirectionX + "," + person.DirectionY + ". Har kordinater X: " + person.PlatsX + ", och Y: " + person.PlatsY);
-                //    rad5++;
-
-                //}
-                //else if (keyPress.KeyChar == '4') // knapp2 blir -10 ms med failsafe(crashar vid threadsleep 0 och under)
-                //{
-                //    Console.ForegroundColor = ConsoleColor.Black;
-                //    Console.SetCursorPosition(rad4, rad5);
-                //    Console.WriteLine(person.GetType().Name + ", heter " + person.Name + " och rör sig riktning : " + person.DirectionX + "," + person.DirectionY + ". Har kordinater X: " + person.PlatsX + ", och Y: " + person.PlatsY + "                     ");
-
-                //    rad5++;
-                //    Console.ResetColor();
-
-
-                //}
-                //}
-
-
-
-
-
-                //if (person is Tjuv)
-                //{
-                //    antalTjuvar++;
-
-                //}
-                //Console.SetCursorPosition(105, 20);
-                //Console.WriteLine($"Antal tjuvar: {antalTjuvar}");
-
-
                 {
                     //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
                     int oldX = person.PlatsX;
@@ -387,20 +330,7 @@ class Program
                         Console.SetCursorPosition(oldX, oldY);
                         Console.Write(" ");
 
-
-                        //// fängelse kordinater hörnen
-                        //Console.SetCursorPosition(1, 28);
-                        //Console.Write("X");
-                        //Console.SetCursorPosition(10, 28);
-                        //Console.Write("Y");
-                        //Console.SetCursorPosition(10, 37);
-                        //Console.Write("Z");
-                        //Console.SetCursorPosition(1, 37);
-                        //Console.Write("V");
-
-
-
-
+                                               
 
                         //skriver ut bokstav med olika färger per person
                         if (person is Tjuv)
@@ -452,7 +382,7 @@ class Program
 
 
 
-            // --- start
+            // --- loop för hur länge tjuvar ska sitta i fängelset och frigivna tjuvar ska tillbaka till staden
 
             foreach (Tjuv fånge in fängelse.prisonPlaces)
             {
@@ -469,8 +399,6 @@ class Program
                 fängelse.prisonPlaces.Remove(fånge);
             }
 
-
-            // --- end
             //Utskrift status
             Console.SetCursorPosition(105, 2);
             Console.WriteLine($"{fängelse.prisonPlaces.Count} fångar i fängelset");
@@ -478,10 +406,7 @@ class Program
             //Fängelseloop för att fångar ska röra sig i fängelset
             foreach (Tjuv fånge in fängelse.prisonPlaces)
             {
-                
-
-
-                //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
+                 //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
                 int oldX = fånge.PlatsX;
                 int oldY = fånge.PlatsY;
 
@@ -505,22 +430,9 @@ class Program
                 else if (fånge.PlatsY > 37) fånge.PlatsY = 28;
 
 
-
                 // byter ut gamla X positionen med blank text, kan skriva . eller , för se vart X har gått
                 Console.SetCursorPosition(oldX, oldY);
                 Console.Write(" ");
-
-
-                // fängelse kordinater hörnen
-                //Console.SetCursorPosition(1, 28);
-                //Console.Write("X");
-                //Console.SetCursorPosition(10, 28);
-                //Console.Write("Y");
-                //Console.SetCursorPosition(10, 37);
-                //Console.Write("Z");
-                //Console.SetCursorPosition(1, 37);
-                //Console.Write("V");
-
 
 
                 //skriver ut bokstav med olika färger per person
@@ -534,15 +446,6 @@ class Program
                     Console.ResetColor();
 
                 }
-
-                //stad.Remove(tjuv);
-                //break;
-
-
-
-
-
-
 
             }
             //Utskrift status
@@ -558,10 +461,6 @@ class Program
             Console.SetCursorPosition(105,6);
             Console.WriteLine($"I staden är det {medborgarCount} antal medborgare     ");
 
-
-
-
-
             foreach (var medborgare in medborgareTillFattighus)
             {
                 stad.Remove(medborgare);
@@ -576,10 +475,6 @@ class Program
 
             foreach (Medborgare fattigmedborgare in fattighus.fattighusPlaces)
             {
-                //Console.SetCursorPosition(105, rad3);
-                //Console.WriteLine($"{fattigmedborgare.Name} hamnar i fattighuset                    ");
-                //rad3++;
-
                 //recordar nuvarande plats som gammal plats för ta bort/sudda ut med " " tom text.
                 int oldX = fattigmedborgare.PlatsX;
                 int oldY = fattigmedborgare.PlatsY;
@@ -594,16 +489,6 @@ class Program
 
                 fattigmedborgare.PlatsX += fattigmedborgare.DirectionX;
                 fattigmedborgare.PlatsY += fattigmedborgare.DirectionY;
-
-
-                //Console.SetCursorPosition(1, 40);
-                //Console.Write("Q");
-                //Console.SetCursorPosition(1, 49);
-                //Console.Write("Z");
-                //Console.SetCursorPosition(48, 40);
-                //Console.Write("V");
-                //Console.SetCursorPosition(48, 40);
-                //Console.Write("W");
 
 
                 //// gå igenom väggen, "teleporteras" till andra sidan                    
@@ -625,14 +510,9 @@ class Program
                     fattigmedborgare.PlatsY = 40;
                 }
 
-
-
                 // byter ut gamla X positionen med blank text, kan skriva . eller , för se vart X har gått
                 Console.SetCursorPosition(oldX, oldY);
                 Console.Write(" ");
-
-
-
 
 
                 //skriver ut bokstav med olika färger per person
@@ -644,20 +524,6 @@ class Program
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.Write("M");
                     Console.ResetColor();
-
-
-
-                    //stad.Remove(tjuv);
-                    //break;
-
-
-
-
-                    //}
-
-
-
-
 
                 }
 
