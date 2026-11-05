@@ -92,10 +92,9 @@ class Program
 
         //int rad2 = 61;
 
-        Console.SetCursorPosition(1, 51);
+        Console.SetCursorPosition(15, 27);
         Console.WriteLine("---TJUVFEED---");
-        //Console.SetCursorPosition(105, 14);
-        Console.SetCursorPosition(1, 54);
+        Console.SetCursorPosition(1, 51);
         Console.WriteLine("---POLISFEED---");
         Console.SetCursorPosition(105, 1);
         Console.WriteLine("STATUS:");
@@ -286,7 +285,7 @@ class Program
             //debug loop
             foreach(Personer person in stad)
             {
-                if (rad6 >= 80)
+                if (rad6 >= 120)
                 {
                     break;
                 }
@@ -301,7 +300,7 @@ class Program
                 {
                     Console.WriteLine("                                                                                      ");
                 }
-
+                
                 rad6++;
             }
 
