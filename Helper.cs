@@ -27,7 +27,7 @@ namespace _10._21.ArrayListTest
 
                 // skriver ut
                 Console.SetCursorPosition(15, 28);
-                Console.Write($"Tjuven {tjuv.Name} rånade {medborgare.Name} på {itemAttSno}.                                          ");
+                Console.Write($"Tjuven {tjuv.Name} rånade {medborgare.Name} på {itemAttSno}.                          ");
                 //Thread.Sleep(2000);
             }
 
@@ -38,9 +38,6 @@ namespace _10._21.ArrayListTest
 
         public static void PolisArrest(Tjuv tjuv, Prison prison, Polis polis)
         {
-
-            //ArrayList fängelseList = new ArrayList();
-
             // tom sträng allaItems lista som [i]++ per stöldgods från tjuv
             string allaItems = "";
             int itemCount = tjuv.Stöldgods.Count;
@@ -49,9 +46,7 @@ namespace _10._21.ArrayListTest
 
             // stöldgods loop och lägger till det i lista allaItems så det går att skriva ut allt som blir taget.
             if (tjuv.Stöldgods.Count > 0)
-            {
-
-               
+            {              
 
                 for (int i = 0; i < tjuv.Stöldgods.Count; i++)
                 {
@@ -63,9 +58,7 @@ namespace _10._21.ArrayListTest
                 while (tjuv.Stöldgods.Count > 0)
                 {
                     string namnBeslagtagetItem = tjuv.Stöldgods[0];
-
                     tjuv.Stöldgods.RemoveAt(0);
-
                     polis.Beslagtaget.Add(namnBeslagtagetItem);
 
                 }

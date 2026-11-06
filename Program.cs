@@ -12,6 +12,8 @@ class Program
         // skapar lista med personer -----------------------------------------------------------------------------------------------------------------------------
         List<Personer> stad = new List<Personer>();
 
+
+        // lägga till polis, random X i staden random Y i staden, random rikting/rörelse
         stad.Add(new Polis("Gabriel", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Polis("Elliot", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Polis("Noel", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
@@ -22,10 +24,9 @@ class Program
         stad.Add(new Polis("Ilse", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Polis("Nora", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Polis("Elton", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
-        
 
-        //
 
+        // lägga till medborgare, random X i staden random Y i staden, random rikting/rörelse
         stad.Add(new Medborgare("Liam", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Medborgare("Hugo", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Medborgare("Valter", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
@@ -44,8 +45,8 @@ class Program
         stad.Add(new Medborgare("Maria", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
 
 
-        //
 
+        // lägga till tjuv, random X i staden random Y i staden, random rikting/rörelse
         stad.Add(new Tjuv("Ella", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Tjuv("Leo", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
         stad.Add(new Tjuv("Otto", Random.Shared.Next(1, 97), Random.Shared.Next(1, 26), Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2)));
@@ -85,7 +86,6 @@ class Program
 
         Prison fängelse = new Prison(1, new int[10, 10], 10);
         fängelse.Build();
-
 
         Fattighus fattighus = new Fattighus(40, new int[10, 48], 50); // för att det ska bli jämnt
         fattighus.Build();
@@ -252,13 +252,9 @@ class Program
 
             //  kollar tjuv+medborgare koordinater för sno item via helper metod
             foreach (var personTjuv in stad)
-            {
-                
-
+            {                
                 if (personTjuv is Tjuv tjuv)
-                {
-                    
-                   
+                {                                    
 
                     foreach (var personMedborgare in stad)
                     {
@@ -283,6 +279,7 @@ class Program
                 }
             }
 
+
             // kollar tjuv+polis koordinater för sno item via helper metod
             foreach (var personPolis in stad)
             {
@@ -301,12 +298,7 @@ class Program
                                     Helper.PolisArrest(tjuv, fängelse, polis);
                                     arresteradTjuv.Add(tjuv);
                                 }
-
-
                             }
-
-
-
                         }
                     }
                 }
