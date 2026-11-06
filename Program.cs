@@ -405,6 +405,8 @@ class Program
 
             }
 
+
+
             // efter loopet och per varje arresteradtjuv = remove tjuv från stad
             foreach (var tjuv in arresteradTjuv)
             {
@@ -430,6 +432,10 @@ class Program
             {
                 fängelse.prisonPlaces.Remove(fånge);
             }
+
+
+
+
 
             // Utskrift status
             Console.SetCursorPosition(105, 2);

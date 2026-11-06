@@ -44,7 +44,7 @@ namespace _10._21.ArrayListTest
             // tom sträng allaItems lista som [i]++ per stöldgods från tjuv
             string allaItems = "";
             int itemCount = tjuv.Stöldgods.Count;
-            int prisonTime = itemCount * 10000;
+            int prisonTime = itemCount * 10;
             
 
             // stöldgods loop och lägger till det i lista allaItems så det går att skriva ut allt som blir taget.
@@ -71,7 +71,7 @@ namespace _10._21.ArrayListTest
                 }
 
 
-                tjuv.freedomTime = DateTime.Now.AddMilliseconds(prisonTime);
+                tjuv.freedomTime = DateTime.Now.AddSeconds(prisonTime);
 
                 prison.prisonPlaces.Add(tjuv);
 
@@ -81,7 +81,7 @@ namespace _10._21.ArrayListTest
                 
                 Console.SetCursorPosition(1,52);
                 // Console.WriteLine($"Polisen {polis.Name} arresterade tjuven {tjuv.Name}                                 \n Beslagtaget gods: {allaItems}                                       \n {tjuv.Name} blev arresterad i {prisonTime / 1000} sekunder..                                             ");
-                Console.WriteLine($"Polisen {polis.Name} arresterade tjuven {tjuv.Name} som sitter {prisonTime / 1000}s i fängelse.                 \n Beslagtaget gods:     " +
+                Console.WriteLine($"Polisen {polis.Name} arresterade tjuven {tjuv.Name} som sitter {prisonTime}s i fängelse.                 \n Beslagtaget gods:     " +
                     $"\n {allaItems}                                                             ");
                //Thread.Sleep(2000);
             }
