@@ -165,7 +165,7 @@ class Program
                     threadSleepSpeed += 10;
 
                 }
-                else if (keyPress.KeyChar == '2' && threadSleepSpeed > 10) // knapp2 blir -10 ms med failsafe(crashar vid threadsleep 0 och under)
+                else if (keyPress.KeyChar == '2' && threadSleepSpeed > 10) // knapp2 blir -10 ms med failsafe
                 {
                     threadSleepSpeed -= 10;
 
