@@ -216,6 +216,35 @@ class Program
 
 
 
+            int rad6 = 20;
+
+            // debug loop
+            foreach (Personer person in stad)
+            {
+                if (rad6 >= 52)
+                {
+                    break;
+                }
+
+                Console.SetCursorPosition(105, rad6);
+
+                if (visaInfo == true)
+                {
+                    Console.WriteLine(person.GetType().Name + " " + person.Name + ". Rör sig i riktning :" + person.DirectionX + "," + person.DirectionY + ". Koordinater X: " + person.PlatsX + ", och Y: " + person.PlatsY);
+                }
+                else
+                {
+                    Console.WriteLine("                                                                                      ");
+                }
+
+                rad6++;
+            }
+
+
+
+
+
+
 
 
 
@@ -285,30 +314,7 @@ class Program
 
             
 
-           
-            int rad6 = 20;
-            
-            // debug loop
-            foreach(Personer person in stad)
-            {
-                if (rad6 >= 52)
-                {
-                    break;
-                }
 
-                Console.SetCursorPosition(105, rad6);
-
-                if (visaInfo == true)
-                {
-                    Console.WriteLine(person.GetType().Name + " " + person.Name + ". Rör sig i riktning :" + person.DirectionX + "," + person.DirectionY + ". Koordinater X: " + person.PlatsX + ", och Y: " + person.PlatsY);
-                }
-                else
-                {
-                    Console.WriteLine("                                                                                      ");
-                }
-                
-                rad6++;
-            }
 
 
 
